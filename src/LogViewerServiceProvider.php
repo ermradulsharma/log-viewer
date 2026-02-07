@@ -44,7 +44,7 @@ class LogViewerServiceProvider extends PackageServiceProvider
     {
         $this->registerConfig();
 
-        $this->booted(function () {
+        $this->app->booted(function () {
             $this->registerProvider(Providers\RouteServiceProvider::class);
         });
 
