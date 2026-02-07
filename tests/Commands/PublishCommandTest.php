@@ -173,8 +173,10 @@ class PublishCommandTest extends TestCase
 
     /**
      * Get LogViewer lang folder
+     *
+     * @return string|false
      */
-    private function getLocalizationFolder(): string|false
+    private function getLocalizationFolder()
     {
         return realpath(lang_path('vendor/log-viewer'));
     }
