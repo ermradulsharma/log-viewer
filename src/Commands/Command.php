@@ -20,7 +20,7 @@ abstract class Command extends BaseCommand
      */
 
     /** @var \Ermradulsharma\LogViewer\Contracts\LogViewer */
-    protected $logViewer;
+    protected LogViewerContract $logViewer;
 
     /* -----------------------------------------------------------------
      |  Constructor

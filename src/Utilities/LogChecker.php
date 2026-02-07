@@ -25,42 +25,42 @@ class LogChecker implements LogCheckerContract
      *
      * @var \Illuminate\Contracts\Config\Repository
      */
-    private $config;
+    private ConfigContract $config;
 
     /**
      * The filesystem instance.
      *
      * @var \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem
      */
-    private $filesystem;
+    private FilesystemContract $filesystem;
 
     /**
      * Log handler mode.
      *
      * @var string
      */
-    protected $handler = '';
+    protected string $handler = '';
 
     /**
      * The check status.
      *
      * @var bool
      */
-    private $status = true;
+    private bool $status = true;
 
     /**
      * The check messages.
      *
      * @var array
      */
-    private $messages;
+    private array $messages;
 
     /**
      * Log files statuses.
      *
      * @var array
      */
-    private $files = [];
+    private array $files = [];
 
     /* -----------------------------------------------------------------
      |  Constructor
