@@ -9,11 +9,11 @@
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
-    <source>
-        <include>
-            <directory>./src</directory>
-        </include>
-    </source>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
     <!--
     <coverage>
         <report>

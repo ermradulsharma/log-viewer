@@ -15,7 +15,9 @@ use Ermradulsharma\LogViewer\LogViewer;
 use Ermradulsharma\LogViewer\Utilities;
 use Skywalker\Support\Providers\ServiceProvider;
 
-if (! interface_exists('Illuminate\Contracts\Support\DeferrableProvider')) {
+if (interface_exists('Illuminate\Contracts\Support\DeferrableProvider')) {
+    class_alias('Illuminate\Contracts\Support\DeferrableProvider', 'Ermradulsharma\LogViewer\Providers\DeferrableProvider');
+} else {
     interface DeferrableProvider {}
 }
 

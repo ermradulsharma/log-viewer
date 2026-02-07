@@ -42,8 +42,6 @@ class LogViewerServiceProvider extends PackageServiceProvider
      */
     public function register(): void
     {
-        parent::register();
-
         $this->registerConfig();
 
         $this->booted(function () {

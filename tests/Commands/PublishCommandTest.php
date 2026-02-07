@@ -178,7 +178,11 @@ class PublishCommandTest extends TestCase
      */
     private function getLocalizationFolder()
     {
-        return realpath(lang_path('vendor/log-viewer'));
+        $path = function_exists('lang_path')
+            ? lang_path('vendor/log-viewer')
+            : resource_path('lang/vendor/log-viewer');
+
+        return file_exists($path) ? $path : false;
     }
 
     /**
