@@ -27,7 +27,7 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.0",
         "ext-json": "*",
         "ermradulsharma/laravel-toolkit": "^1.0|^2.0",
         "psr/log": "^1.0|^2.0|^3.0"
