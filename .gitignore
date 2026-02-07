@@ -1,0 +1,44 @@
+# Dependencies
+/vendor
+composer.lock
+
+# PHP/Laravel
+.env
+.env.backup
+.env.php
+php_errors.log
+xmlrpc.php
+
+# Testing
+.phpunit.result.cache
+phpunit.xml
+tests/_output/*
+tests/_support/_generated/*
+build/
+dist/
+coverage/
+*.coverage
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+.project
+.settings/
+.buildpath
+.classpath
+
+# Operating Systems
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+Icon?
+
+# Miscellaneous
+node_modules/
+npm-debug.log
+yarn-error.log
+.temp/
+.tmp/

@@ -1,0 +1,25 @@
+<?php
+
+
+
+namespace Ermradulsharma\LogViewer\Exceptions;
+
+/**
+ * Class     LogNotFoundException
+ *
+ * @author   Mradul Sharma <skywalkerlknw@gmail.com>
+ */
+class LogNotFoundException extends LogViewerException
+{
+    /**
+     * Make the exception.
+     *
+     * @param  string  $date
+     *
+     * @return static
+     */
+    public static function make(string $date)
+    {
+        return new static("Log not found in this date [{$date}]");
+    }
+}

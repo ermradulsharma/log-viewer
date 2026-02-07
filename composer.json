@@ -1,0 +1,82 @@
+{
+    "name": "ermradulsharma/log-viewer",
+    "description": "A powerful and highly customizable Log Viewer for Laravel, featuring a robust API, Role-Based Access Control (RBAC), AI-powered error analysis, performance insights, and automated reporting. Supports Laravel 5.x to 12.x with dark mode and multi-language support out of the box.",
+    "keywords": [
+        "laravel",
+        "log-viewer",
+        "log",
+        "monitoring",
+        "ai-analysis",
+        "rbac",
+        "performance-insights",
+        "reporting",
+        "api",
+        "multi-language",
+        "dark-mode",
+        "laravel-package",
+        "ermradulsharma"
+    ],
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Mradul Sharma",
+            "email": "skywalkerlknw@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "ext-json": "*",
+        "ermradulsharma/laravel-toolkit": "^1.0|^2.0",
+        "psr/log": "^1.0|^2.0|^3.0"
+    },
+    "require-dev": {
+        "laravel/framework": "^12.0",
+        "laravel/pint": "^1.0",
+        "mockery/mockery": "^1.6",
+        "orchestra/testbench-core": "^10.0",
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ermradulsharma\\LogViewer\\": "src/"
+        },
+        "files": [
+            "helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ermradulsharma\\LogViewer\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --colors=always",
+        "test:dox": "phpunit --testdox --colors=always",
+        "test:cov": "phpunit --coverage-html build/coverage"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ermradulsharma\\LogViewer\\LogViewerServiceProvider",
+                "Ermradulsharma\\LogViewer\\Providers\\DeferredServicesProvider"
+            ],
+            "aliases": {
+                "LogViewer": "Ermradulsharma\\LogViewer\\Facades\\LogViewer"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ermradulsharma/log-viewer.git"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
