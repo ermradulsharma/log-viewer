@@ -1,8 +1,8 @@
-# LogViewer [![Packagist License][badge_license]](LICENSE.md) [![For Laravel][badge_laravel]](https://packagist.org/packages/ermradulsharma/log-viewer)
+# LogViewer [![License](https://img.shields.io/github/license/ermradulsharma/log-viewer?style=flat-square)](LICENSE.md) [![For Laravel](https://img.shields.io/badge/Laravel-5.x%20to%2012.x-orange.svg?style=flat-square)](https://github.com/ermradulsharma/log-viewer)
 
-[![Packagist][badge_package]][link-packagist]
-[![Packagist Release][badge_release]][link-packagist]
-[![Packagist Downloads][badge_downloads]][link-packagist]
+[![GitHub Release](https://img.shields.io/github/v/release/ermradulsharma/log-viewer?style=flat-square)](https://github.com/ermradulsharma/log-viewer)
+[![GitHub Stars](https://img.shields.io/github/stars/ermradulsharma/log-viewer?style=flat-square)](https://github.com/ermradulsharma/log-viewer)
+[![GitHub Issues](https://img.shields.io/github/issues/ermradulsharma/log-viewer?style=flat-square)](https://github.com/ermradulsharma/log-viewer)
 
 _By Mradul Sharma_
 
@@ -45,7 +45,7 @@ Feel free to check out the [license](LICENSE.md), and [contribution guidelines](
 | ![Laravel v8.x][laravel_8_x]   | ![LogViewer v1.0.0][log_viewer_1_0_0] |
 | ![Laravel v7.x][laravel_7_x]   | ![LogViewer v1.0.0][log_viewer_1_0_0] |
 | ![Laravel v6.x][laravel_6_x]   | ![LogViewer v1.0.0][log_viewer_1_0_0] |
-| ![Laravel v5.x][laravel_5_5]   | ![LogViewer v1.0.0][log_viewer_1_0_0] |
+| ![Laravel v5.x][laravel_5_x]   | ![LogViewer v1.0.0][log_viewer_1_0_0] |
 
 ## Installation & Setup
 
@@ -220,12 +220,5 @@ If you discover any security related issues, please email <skywalkerlknw@gmail.c
 [laravel_8_x]: https://img.shields.io/badge/version-8.x-blue.svg?style=flat-square "Laravel v8.x"
 [laravel_7_x]: https://img.shields.io/badge/version-7.x-blue.svg?style=flat-square "Laravel v7.x"
 [laravel_6_x]: https://img.shields.io/badge/version-6.x-blue.svg?style=flat-square "Laravel v6.x"
-[laravel_5_5]: https://img.shields.io/badge/version-5.5-blue.svg?style=flat-square "Laravel v5.5"
+[laravel_5_x]: https://img.shields.io/badge/version-5.5-blue.svg?style=flat-square "Laravel v5.5"
 [log_viewer_1_0_0]: https://img.shields.io/badge/version-1.0.0-blue.svg?style=flat-square "LogViewer v1.0.0"
-[badge_laravel]: https://img.shields.io/badge/Laravel-5.x%20to%2012.x-orange.svg?style=flat-square
-[badge_license]: https://img.shields.io/packagist/l/ermradulsharma/log-viewer.svg?style=flat-square
-[badge_package]: https://img.shields.io/badge/package-ermradulsharma/log--viewer-blue.svg?style=flat-square
-[badge_release]: https://img.shields.io/packagist/v/ermradulsharma/log-viewer.svg?style=flat-square
-[badge_downloads]: https://img.shields.io/packagist/dt/ermradulsharma/log-viewer.svg?style=flat-square
-[link-packagist]: https://packagist.org/packages/ermradulsharma/log-viewer
-[link-scrutinizer]: https://scrutinizer-ci.com/g/Ermradulsharma/LogViewer/
