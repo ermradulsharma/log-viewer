@@ -168,7 +168,7 @@ abstract class TestCase extends BaseTestCase
      * @param  \Illuminate\Contracts\Support\Jsonable|mixed  $object
      * @param  string                                        $message
      */
-    public static function assertJsonObject($object, $message = ''): void
+    public static function assertJsonObject($object, $message = '')
     {
         static::assertInstanceOf(Jsonable::class, $object);
         static::assertJson($object->toJson(JSON_PRETTY_PRINT), $message);
@@ -183,7 +183,7 @@ abstract class TestCase extends BaseTestCase
      * @param  \Ermradulsharma\LogViewer\Entities\Log  $log
      * @param  string                             $date
      */
-    protected static function assertLog(Log $log, $date): void
+    protected static function assertLog(Log $log, $date)
     {
         static::assertEquals($date, $log->date);
         static::assertLogEntries($log->date, $log->entries());
@@ -195,7 +195,7 @@ abstract class TestCase extends BaseTestCase
      * @param  string                                            $date
      * @param  \Ermradulsharma\LogViewer\Entities\LogEntryCollection  $entries
      */
-    protected static function assertLogEntries($date, LogEntryCollection $entries): void
+    protected static function assertLogEntries($date, LogEntryCollection $entries)
     {
         foreach ($entries as $entry) {
             static::assertLogEntry($date, $entry);
@@ -208,7 +208,7 @@ abstract class TestCase extends BaseTestCase
      * @param  string                                  $date
      * @param  \Ermradulsharma\LogViewer\Entities\LogEntry  $entry
      */
-    protected static function assertLogEntry($date, LogEntry $entry): void
+    protected static function assertLogEntry($date, LogEntry $entry)
     {
         $dt = Carbon::createFromFormat('Y-m-d', $date);
 
@@ -225,7 +225,7 @@ abstract class TestCase extends BaseTestCase
      * @param  string  $level
      * @param  string  $message
      */
-    protected static function assertInLogLevels($level, $message = ''): void
+    protected static function assertInLogLevels($level, $message = '')
     {
         static::assertContains($level, static::$logLevels, $message);
     }
@@ -235,7 +235,7 @@ abstract class TestCase extends BaseTestCase
      *
      * @param  array  $levels
      */
-    protected static function assertLevels(array $levels): void
+    protected static function assertLevels(array $levels)
     {
         static::assertCount(8, $levels);
 
@@ -251,7 +251,7 @@ abstract class TestCase extends BaseTestCase
      * @param  string  $locale
      * @param  array   $levels
      */
-    protected function assertTranslatedLevels($locale, $levels): void
+    protected function assertTranslatedLevels($locale, $levels)
     {
         foreach ($levels as $level => $translatedLevel) {
             static::assertTranslatedLevel($locale, $level, $translatedLevel);
@@ -265,7 +265,7 @@ abstract class TestCase extends BaseTestCase
      * @param  string  $level
      * @param  string  $actualTrans
      */
-    protected static function assertTranslatedLevel($locale, $level, $actualTrans): void
+    protected static function assertTranslatedLevel($locale, $level, $actualTrans)
     {
         $expected = static::getTranslatedLevel($locale, $level);
 
@@ -278,7 +278,7 @@ abstract class TestCase extends BaseTestCase
      * @param  array   $dates
      * @param  string  $message
      */
-    public static function assertDates(array $dates, $message = ''): void
+    public static function assertDates(array $dates, $message = '')
     {
         foreach ($dates as $date) {
             static::assertDate($date, $message);
@@ -291,7 +291,7 @@ abstract class TestCase extends BaseTestCase
      * @param  string  $date
      * @param  string  $message
      */
-    public static function assertDate($date, $message = ''): void
+    public static function assertDate($date, $message = '')
     {
         static::assertMatchesRegExp('/' . LogParser::REGEX_DATE_PATTERN . '/', $date, $message);
     }
@@ -304,7 +304,7 @@ abstract class TestCase extends BaseTestCase
      * @param  int     $count
      * @param  bool    $withIcons
      */
-    protected static function assertMenuItem($item, $name, $count, $withIcons = true): void
+    protected static function assertMenuItem($item, $name, $count, $withIcons = true)
     {
         static::assertArrayHasKey('name', $item);
         static::assertEquals($name, $item['name']);
@@ -325,7 +325,7 @@ abstract class TestCase extends BaseTestCase
      * @param  string  $color
      * @param  string  $message
      */
-    protected static function assertHexColor($color, $message = ''): void
+    protected static function assertHexColor($color, $message = '')
     {
         $pattern = '/^#?([a-f0-9]{3}|[a-f0-9]{6})$/i';
 
@@ -342,7 +342,7 @@ abstract class TestCase extends BaseTestCase
      * @param  string  $message
      *
      */
-    public static function assertMatchesRegExp($pattern, $string, $message = ''): void
+    public static function assertMatchesRegExp($pattern, $string, $message = '')
     {
         static::assertThat($string, new RegularExpression($pattern), $message);
     }

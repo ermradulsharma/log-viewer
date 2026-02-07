@@ -48,13 +48,13 @@ class LogStylerTest extends TestCase
      */
 
     /** @test */
-    public function it_can_ben_instantiated(): void
+    public function it_can_ben_instantiated()
     {
         static::assertInstanceOf(LogStyler::class, $this->styler);
     }
 
     /** @test */
-    public function it_can_get_icon(): void
+    public function it_can_get_icon()
     {
         foreach (self::$logLevels as $level) {
             static::assertMatchesRegExp(
@@ -65,7 +65,7 @@ class LogStylerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_default_when_icon_not_found(): void
+    public function it_can_get_default_when_icon_not_found()
     {
         $icon = $this->styler->icon('danger', $default = 'fa fa-fw fa-danger');
 
@@ -74,7 +74,7 @@ class LogStylerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_color(): void
+    public function it_can_get_color()
     {
         foreach (self::$logLevels as $level) {
             static::assertHexColor($this->styler->color($level));
@@ -82,7 +82,7 @@ class LogStylerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_default_when_color_not_found(): void
+    public function it_can_get_default_when_color_not_found()
     {
         $color = $this->styler->color('danger', $default = '#BADA55');
 
@@ -91,7 +91,7 @@ class LogStylerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_use_helper_to_get_icon(): void
+    public function it_can_use_helper_to_get_icon()
     {
         foreach (self::$logLevels as $level) {
             static::assertMatchesRegExp(
@@ -102,7 +102,7 @@ class LogStylerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_use_helper_get_color(): void
+    public function it_can_use_helper_get_color()
     {
         foreach (self::$logLevels as $level) {
             static::assertHexColor(log_styler()->color($level));
@@ -110,7 +110,7 @@ class LogStylerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_string_to_highlight(): void
+    public function it_can_get_string_to_highlight()
     {
         $expected = [
             '^#\d+',
