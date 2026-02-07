@@ -177,6 +177,12 @@ jobs:
       - name: Install dependencies
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "phpunit/phpunit:${{ matrix.phpunit }}" --no-interaction --no-update --dev -W
+          if [ "$(php -r 'echo (int) (PHP_VERSION_ID < 80000);')" == "1" ]; then
+            composer remove laravel/pint --dev --no-update
+          fi
+          if [ "$(php -r 'echo (int) (PHP_VERSION_ID < 70300);')" == "1" ]; then
+            composer require "mockery/mockery:^1.3" --dev --no-update
+          fi
           composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
       - name: Execute tests
