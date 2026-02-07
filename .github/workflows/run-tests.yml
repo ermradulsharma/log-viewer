@@ -119,6 +119,7 @@ jobs:
       - name: Install dependencies
         run: |
           composer config allow-plugins.kylekatarnls/update-helper true
+          composer config audit.block-insecure false
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "phpunit/phpunit:${{ matrix.phpunit }}" --no-interaction --no-update --dev -W
           if [ "$(php -r 'echo (int) (PHP_VERSION_ID < 80000);')" == "1" ]; then
             composer remove laravel/pint --dev --no-update
