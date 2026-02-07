@@ -20,9 +20,9 @@ class ClearCommandTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    private $logViewer;
+    private LogViewerContract $logViewer;
 
-    private $path;
+    private string $path;
 
     /* -----------------------------------------------------------------
      |  Main Methods

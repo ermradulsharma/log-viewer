@@ -20,7 +20,7 @@ class LogLevelsTest extends TestCase
      */
 
     /** @var  \Ermradulsharma\LogViewer\Utilities\LogLevels  */
-    private $levels;
+    private LogLevels $levels;
 
     /* -----------------------------------------------------------------
      |  Main Methods

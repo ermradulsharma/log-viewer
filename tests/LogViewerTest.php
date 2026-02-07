@@ -21,7 +21,7 @@ class LogViewerTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    private $logViewer;
+    private LogViewerContract $logViewer;
 
     /* -----------------------------------------------------------------
      |  Main Methods

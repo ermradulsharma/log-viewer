@@ -21,10 +21,10 @@ class StatsTableTest extends TestCase
      */
 
     /** @var  \Ermradulsharma\LogViewer\Tables\StatsTable */
-    private $table;
+    private StatsTable $table;
 
     /** @var array */
-    private $rawData;
+    private array $rawData;
 
     /* -----------------------------------------------------------------
      |  Main Methods

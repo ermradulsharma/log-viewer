@@ -31,9 +31,9 @@ abstract class TestCase extends BaseTestCase
      | -----------------------------------------------------------------
      */
 
-    protected static $logLevels = [];
+    protected static array $logLevels = [];
 
-    protected static $locales   = [
+    protected static array $locales   = [
         'ar',
         'bg',
         'bn',

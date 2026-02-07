@@ -26,14 +26,14 @@ class LogMenu implements LogMenuContract
      *
      * @var \Illuminate\Contracts\Config\Repository
      */
-    protected $config;
+    protected ConfigContract $config;
 
     /**
      * The log styler instance.
      *
      * @var \Ermradulsharma\LogViewer\Contracts\Utilities\LogStyler
      */
-    private $styler;
+    private LogStylerContract $styler;
 
     /* -----------------------------------------------------------------
      |  Constructor

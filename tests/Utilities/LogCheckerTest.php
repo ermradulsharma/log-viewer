@@ -20,7 +20,7 @@ class LogCheckerTest extends TestCase
      */
 
     /** @var  \Ermradulsharma\LogViewer\Utilities\LogChecker */
-    private $checker;
+    private LogChecker $checker;
 
     /* -----------------------------------------------------------------
      |  Main Methods

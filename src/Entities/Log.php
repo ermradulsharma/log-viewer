@@ -20,16 +20,16 @@ class Log implements Arrayable, Jsonable, JsonSerializable
      */
 
     /** @var string */
-    public $date;
+    public string $date;
 
     /** @var string */
-    private $path;
+    private string $path;
 
     /** @var \Ermradulsharma\LogViewer\Entities\LogEntryCollection */
-    private $entries;
+    private LogEntryCollection $entries;
 
     /** @var \SplFileInfo */
-    private $file;
+    private \SplFileInfo $file;
 
     /* -----------------------------------------------------------------
      |  Constructor

@@ -21,7 +21,7 @@ class LogStylerTest extends TestCase
      */
 
     /** @var  \Ermradulsharma\LogViewer\Utilities\LogStyler */
-    private $styler;
+    private LogStyler $styler;
 
     /* -----------------------------------------------------------------
      |  Main Methods

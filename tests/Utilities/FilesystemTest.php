@@ -20,7 +20,7 @@ class FilesystemTest extends TestCase
      */
 
     /** @var  \Ermradulsharma\LogViewer\Utilities\Filesystem */
-    private $filesystem;
+    private Filesystem $filesystem;
 
     /* -----------------------------------------------------------------
      |  Main Methods

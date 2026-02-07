@@ -19,23 +19,22 @@ abstract class AbstractTable implements TableContract
      | -----------------------------------------------------------------
      */
 
-    /** @var array  */
-    private $header  = [];
+    private array $header = [];
 
     /** @var array  */
-    private $rows    = [];
+    private array $rows = [];
 
     /** @var array  */
-    private $footer  = [];
+    private array $footer = [];
 
     /** @var \Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels */
-    protected $levels;
+    protected LogLevelsContract $levels;
 
     /** @var string|null */
-    protected $locale;
+    protected ?string $locale;
 
     /** @var array */
-    private $data = [];
+    private array $data = [];
 
     /* -----------------------------------------------------------------
      |  Constructor

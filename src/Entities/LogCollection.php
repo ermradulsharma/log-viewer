@@ -22,7 +22,7 @@ class LogCollection extends LazyCollection
      */
 
     /** @var \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem */
-    private $filesystem;
+    private FilesystemContract $filesystem;
 
     /* -----------------------------------------------------------------
      |  Constructor

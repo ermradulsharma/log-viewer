@@ -36,7 +36,7 @@ class DeferredServicesProvider extends ServiceProvider implements DeferrableProv
     /**
      * Register the service provider.
      */
-    public function register()
+    public function register(): void
     {
         $this->registerLogViewer();
         $this->registerLogLevels();
@@ -52,7 +52,7 @@ class DeferredServicesProvider extends ServiceProvider implements DeferrableProv
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return [
             LogViewerContract::class,
@@ -73,7 +73,7 @@ class DeferredServicesProvider extends ServiceProvider implements DeferrableProv
     /**
      * Register the log viewer service.
      */
-    private function registerLogViewer()
+    private function registerLogViewer(): void
     {
         $this->singleton(LogViewerContract::class, LogViewer::class);
     }
@@ -81,7 +81,7 @@ class DeferredServicesProvider extends ServiceProvider implements DeferrableProv
     /**
      * Register the log levels.
      */
-    private function registerLogLevels()
+    private function registerLogLevels(): void
     {
         $this->singleton(LogLevelsContract::class, function ($app) {
             return new Utilities\LogLevels(
@@ -94,7 +94,7 @@ class DeferredServicesProvider extends ServiceProvider implements DeferrableProv
     /**
      * Register the log styler.
      */
-    private function registerStyler()
+    private function registerStyler(): void
     {
         $this->singleton(LogStylerContract::class, Utilities\LogStyler::class);
     }
@@ -102,7 +102,7 @@ class DeferredServicesProvider extends ServiceProvider implements DeferrableProv
     /**
      * Register the log menu builder.
      */
-    private function registerLogMenu()
+    private function registerLogMenu(): void
     {
         $this->singleton(LogMenuContract::class, Utilities\LogMenu::class);
     }
@@ -110,7 +110,7 @@ class DeferredServicesProvider extends ServiceProvider implements DeferrableProv
     /**
      * Register the log filesystem.
      */
-    private function registerFilesystem()
+    private function registerFilesystem(): void
     {
         $this->singleton(FilesystemContract::class, function ($app) {
             /** @var  \Illuminate\Config\Repository  $config */
@@ -128,7 +128,7 @@ class DeferredServicesProvider extends ServiceProvider implements DeferrableProv
     /**
      * Register the log factory class.
      */
-    private function registerFactory()
+    private function registerFactory(): void
     {
         $this->singleton(FactoryContract::class, Utilities\Factory::class);
     }
@@ -136,7 +136,7 @@ class DeferredServicesProvider extends ServiceProvider implements DeferrableProv
     /**
      * Register the log checker service.
      */
-    private function registerChecker()
+    private function registerChecker(): void
     {
         $this->singleton(LogCheckerContract::class, Utilities\LogChecker::class);
     }

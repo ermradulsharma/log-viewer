@@ -29,14 +29,14 @@ class Factory implements FactoryContract
      *
      * @var \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem
      */
-    protected $filesystem;
+    protected FilesystemContract $filesystem;
 
     /**
      * The log levels instance.
      *
      * @var \Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels
      */
-    private $levels;
+    private LogLevelsContract $levels;
 
     /* -----------------------------------------------------------------
      |  Constructor

@@ -19,7 +19,7 @@ class LogViewerServiceProviderTest extends TestCase
      */
 
     /** @var  LogViewerServiceProvider */
-    private $provider;
+    private LogViewerServiceProvider $provider;
 
     /* -----------------------------------------------------------------
      |  Main Methods

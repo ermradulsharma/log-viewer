@@ -34,14 +34,14 @@ class LogLevels implements LogLevelsContract
      *
      * @var \Illuminate\Translation\Translator
      */
-    private $translator;
+    private Translator $translator;
 
     /**
      * The selected locale.
      *
      * @var string
      */
-    private $locale;
+    private string $locale;
 
     /* -----------------------------------------------------------------
      |  Constructor

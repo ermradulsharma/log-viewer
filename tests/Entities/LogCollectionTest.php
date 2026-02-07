@@ -21,7 +21,7 @@ class LogCollectionTest extends TestCase
      */
 
     /** @var  \Ermradulsharma\LogViewer\Entities\LogCollection */
-    private $logs;
+    private LogCollection $logs;
 
     /* -----------------------------------------------------------------
      |  Main Methods

@@ -21,7 +21,7 @@ class DeferredServicesProviderTest extends TestCase
      */
 
     /** @var  \Ermradulsharma\LogViewer\Providers\DeferredServicesProvider */
-    private $provider;
+    private DeferredServicesProvider $provider;
 
     /* -----------------------------------------------------------------
      |  Main Methods

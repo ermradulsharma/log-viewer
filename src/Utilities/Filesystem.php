@@ -27,35 +27,35 @@ class Filesystem implements FilesystemContract
      *
      * @var \Illuminate\Filesystem\Filesystem
      */
-    protected $filesystem;
+    protected IlluminateFilesystem $filesystem;
 
     /**
      * The base storage path.
      *
      * @var string
      */
-    protected $storagePath;
+    protected string $storagePath;
 
     /**
      * The log files prefix pattern.
      *
      * @var string
      */
-    protected $prefixPattern;
+    protected string $prefixPattern;
 
     /**
      * The log files date pattern.
      *
      * @var string
      */
-    protected $datePattern;
+    protected string $datePattern;
 
     /**
      * The log files extension.
      *
      * @var string
      */
-    protected $extension;
+    protected string $extension;
 
     /* -----------------------------------------------------------------
      |  Constructor

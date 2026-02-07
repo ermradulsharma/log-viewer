@@ -63,21 +63,21 @@ class LogViewer implements LogViewerContract
      *
      * @var \Ermradulsharma\LogViewer\Contracts\Utilities\Factory
      */
-    protected $factory;
+    protected FactoryContract $factory;
 
     /**
      * The filesystem instance.
      *
      * @var \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem
      */
-    protected $filesystem;
+    protected FilesystemContract $filesystem;
 
     /**
      * The log levels instance.
      *
      * @var \Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels
      */
-    protected $levels;
+    protected LogLevelsContract $levels;
 
     /* -----------------------------------------------------------------
      |  Constructor

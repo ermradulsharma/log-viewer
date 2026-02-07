@@ -20,7 +20,7 @@ class LogTest extends TestCase
      */
 
     /** @var  \Ermradulsharma\LogViewer\Entities\Log */
-    private $log;
+    private Log $log;
 
     /* -----------------------------------------------------------------
      |  Main Methods

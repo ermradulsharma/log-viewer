@@ -20,7 +20,7 @@ class FactoryTest extends TestCase
      */
 
     /** @var  \Ermradulsharma\LogViewer\Contracts\Utilities\Factory */
-    private $logFactory;
+    private \Ermradulsharma\LogViewer\Contracts\Utilities\Factory $logFactory;
 
     /* -----------------------------------------------------------------
      |  Main Methods

@@ -25,7 +25,7 @@ class LogStyler implements LogStylerContract
      *
      * @var \Illuminate\Contracts\Config\Repository
      */
-    protected $config;
+    protected ConfigContract $config;
 
     /* -----------------------------------------------------------------
      |  Constructor

@@ -31,13 +31,13 @@ class LogViewerController extends Controller
      *
      * @var \Ermradulsharma\LogViewer\Contracts\LogViewer
      */
-    protected $logViewer;
+    protected LogViewerContract $logViewer;
 
     /** @var int */
-    protected $perPage = 30;
+    protected int $perPage = 30;
 
     /** @var string */
-    protected $showRoute = 'log-viewer::logs.show';
+    protected string $showRoute = 'log-viewer::logs.show';
 
     /* -----------------------------------------------------------------
      |  Constructor

@@ -20,7 +20,7 @@ class LogMenuTest extends TestCase
      */
 
     /** @var  \Ermradulsharma\LogViewer\Utilities\LogMenu */
-    private $menu;
+    private LogMenu $menu;
 
     /* -----------------------------------------------------------------
      |  Main Methods
