@@ -2,10 +2,12 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Utilities;
+namespace Skywalker\LogViewer\Tests\Utilities;
 
-use Ermradulsharma\LogViewer\Tests\TestCase;
-use Ermradulsharma\LogViewer\Utilities\LogMenu;
+use Skywalker\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Utilities\LogMenu;
+use PHPUnit\Framework\Attributes\Test;
+
 
 /**
  * Class     LogMenuTest
@@ -19,7 +21,7 @@ class LogMenuTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Ermradulsharma\LogViewer\Utilities\LogMenu */
+    /** @var  \Skywalker\LogViewer\Utilities\LogMenu */
     private LogMenu $menu;
 
     /* -----------------------------------------------------------------
@@ -31,7 +33,7 @@ class LogMenuTest extends TestCase
     {
         parent::setUp();
 
-        $this->menu = $this->app->make(\Ermradulsharma\LogViewer\Contracts\Utilities\LogMenu::class);
+        $this->menu = $this->app->make(\Skywalker\LogViewer\Contracts\Utilities\LogMenu::class);
     }
 
     protected function tearDown(): void
@@ -46,13 +48,15 @@ class LogMenuTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_be_instantiated(): void
     {
         static::assertInstanceOf(LogMenu::class, $this->menu);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_make_menu_with_helper(): void
     {
         $log = $this->getLog('2015-01-01');

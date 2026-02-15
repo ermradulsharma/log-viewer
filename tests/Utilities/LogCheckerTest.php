@@ -2,10 +2,12 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Utilities;
+namespace Skywalker\LogViewer\Tests\Utilities;
 
-use Ermradulsharma\LogViewer\Tests\TestCase;
-use Ermradulsharma\LogViewer\Utilities\LogChecker;
+use Skywalker\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Utilities\LogChecker;
+use PHPUnit\Framework\Attributes\Test;
+
 
 /**
  * Class     LogCheckerTest
@@ -19,7 +21,7 @@ class LogCheckerTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Ermradulsharma\LogViewer\Utilities\LogChecker */
+    /** @var  \Skywalker\LogViewer\Utilities\LogChecker */
     private LogChecker $checker;
 
     /* -----------------------------------------------------------------
@@ -31,7 +33,7 @@ class LogCheckerTest extends TestCase
     {
         parent::setUp();
 
-        $this->checker = $this->app->make(\Ermradulsharma\LogViewer\Contracts\Utilities\LogChecker::class);
+        $this->checker = $this->app->make(\Skywalker\LogViewer\Contracts\Utilities\LogChecker::class);
     }
 
     protected function tearDown(): void
@@ -46,20 +48,23 @@ class LogCheckerTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_be_instantiated(): void
     {
         static::assertInstanceOf(LogChecker::class, $this->checker);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_must_fails(): void
     {
         static::assertFalse($this->checker->passes());
         static::assertTrue($this->checker->fails());
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_messages(): void
     {
         $messages = $this->checker->messages();
@@ -71,7 +76,8 @@ class LogCheckerTest extends TestCase
         static::assertArrayHasKey('laravel.log', $messages['files']);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_requirements(): void
     {
         $requirements = $this->checker->requirements();
@@ -82,7 +88,8 @@ class LogCheckerTest extends TestCase
         static::assertEquals($requirements['header'], 'Application requirements fulfilled.');
     }
 
-    /** @test */
+    #[Test]
+
     public function it_must_fail_the_requirements_on_handler(): void
     {
         config()->set('logging.default', 'stack');

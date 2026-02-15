@@ -2,9 +2,9 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Entities;
+namespace Skywalker\LogViewer\Entities;
 
-use Ermradulsharma\LogViewer\Helpers\LogParser;
+use Skywalker\LogViewer\Helpers\LogParser;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\LazyCollection;
 

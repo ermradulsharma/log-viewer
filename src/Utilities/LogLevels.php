@@ -2,9 +2,9 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Utilities;
+namespace Skywalker\LogViewer\Utilities;
 
-use Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels as LogLevelsContract;
+use Skywalker\LogViewer\Contracts\Utilities\LogLevels as LogLevelsContract;
 use Illuminate\Support\Arr;
 use Illuminate\Translation\Translator;
 use Psr\Log\LogLevel;

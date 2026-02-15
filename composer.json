@@ -1,6 +1,9 @@
 {
-    "name": "ermradulsharma/log-viewer",
+    "name": "skywalker-labs/log-viewer",
     "description": "A powerful and highly customizable Log Viewer for Laravel, featuring a robust API, Role-Based Access Control (RBAC), AI-powered error analysis, performance insights, and automated reporting. Supports Laravel 5.x to 12.x with dark mode and multi-language support out of the box.",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.1.0",
     "keywords": [
         "laravel",
         "log-viewer",
@@ -14,18 +17,33 @@
         "multi-language",
         "dark-mode",
         "laravel-package",
-        "ermradulsharma"
+        "skywalker"
     ],
-    "version": "1.1.0",
+    "homepage": "https://github.com/skywalker-labs/log-viewer",
+    "support": {
+        "issues": "https://github.com/skywalker-labs/log-viewer/issues",
+        "source": "https://github.com/skywalker-labs/log-viewer"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/ermradulsharma"
+        }
+    ],
     "authors": [
+        {
+            "name": "Skywalker Labs Team",
+            "email": "skywalkerlknw@gmail.com",
+            "homepage": "https://skywalker-labs.com/",
+            "role": "Developer"
+        },
         {
             "name": "Mradul Sharma",
             "email": "skywalkerlknw@gmail.com",
-            "role": "Developer"
+            "homepage": "https://mradulsharma.vercel.app/",
+            "role": "Lead Developer"
         }
     ],
-    "type": "library",
-    "license": "MIT",
     "require": {
         "php": "^7.4|^8.0",
         "ext-json": "*",
@@ -41,7 +59,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ermradulsharma\\LogViewer\\": "src/"
+            "Skywalker\\LogViewer\\": "src/"
         },
         "files": [
             "helpers.php"
@@ -49,7 +67,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Ermradulsharma\\LogViewer\\Tests\\": "tests/"
+            "Skywalker\\LogViewer\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -60,11 +78,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Ermradulsharma\\LogViewer\\LogViewerServiceProvider",
-                "Ermradulsharma\\LogViewer\\Providers\\DeferredServicesProvider"
+                "Skywalker\\LogViewer\\LogViewerServiceProvider",
+                "Skywalker\\LogViewer\\Providers\\DeferredServicesProvider"
             ],
             "aliases": {
-                "LogViewer": "Ermradulsharma\\LogViewer\\Facades\\LogViewer"
+                "LogViewer": "Skywalker\\LogViewer\\Facades\\LogViewer"
             }
         }
     },
@@ -77,6 +95,6 @@
             "url": "https://github.com/ermradulsharma/log-viewer.git"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

@@ -2,11 +2,12 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Commands;
+namespace Skywalker\LogViewer\Tests\Commands;
 
-use Ermradulsharma\LogViewer\Contracts\LogViewer as LogViewerContract;
-use Ermradulsharma\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Contracts\LogViewer as LogViewerContract;
+use Skywalker\LogViewer\Tests\TestCase;
 use Illuminate\Support\Facades\File;
+use PHPUnit\Framework\Attributes\Test;
 
 /**
  * Class     ClearCommandTest
@@ -53,7 +54,8 @@ class ClearCommandTest extends TestCase
     | -----------------------------------------------------------------
     */
 
-    /** @test */
+    #[Test]
+
     public function it_can_delete_all_log_files(): void
     {
         static::createDummyLog(date('Y-m-d'), storage_path('logs-to-clear'));

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ermradulsharma\LogViewer\Entities;
+namespace Skywalker\LogViewer\Entities;
 
 use Illuminate\Contracts\Support\{Arrayable, Jsonable};
 use Illuminate\Support\Carbon;
@@ -25,7 +25,7 @@ class Log implements Arrayable, Jsonable, JsonSerializable
     /** @var string */
     private string $path;
 
-    /** @var \Ermradulsharma\LogViewer\Entities\LogEntryCollection */
+    /** @var \Skywalker\LogViewer\Entities\LogEntryCollection */
     private LogEntryCollection $entries;
 
     /** @var \SplFileInfo */
@@ -145,7 +145,7 @@ class Log implements Arrayable, Jsonable, JsonSerializable
      *
      * @param  string  $level
      *
-     * @return \Ermradulsharma\LogViewer\Entities\LogEntryCollection
+     * @return \Skywalker\LogViewer\Entities\LogEntryCollection
      */
     public function entries($level = 'all')
     {
@@ -159,7 +159,7 @@ class Log implements Arrayable, Jsonable, JsonSerializable
      *
      * @param  string  $level
      *
-     * @return \Ermradulsharma\LogViewer\Entities\LogEntryCollection
+     * @return \Skywalker\LogViewer\Entities\LogEntryCollection
      */
     public function getByLevel($level)
     {

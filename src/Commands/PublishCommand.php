@@ -2,9 +2,9 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Commands;
+namespace Skywalker\LogViewer\Commands;
 
-use Ermradulsharma\LogViewer\LogViewerServiceProvider;
+use Skywalker\LogViewer\LogViewerServiceProvider;
 use Symfony\Component\Console\Input\InputOption;
 
 /**

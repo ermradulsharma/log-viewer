@@ -2,10 +2,13 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Entities;
+namespace Skywalker\LogViewer\Tests\Entities;
 
-use Ermradulsharma\LogViewer\Entities\Log;
-use Ermradulsharma\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Entities\Log;
+use Skywalker\LogViewer\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\Attributes\DataProvider;
+
 
 /**
  * Class     LogTest
@@ -19,7 +22,7 @@ class LogTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Ermradulsharma\LogViewer\Entities\Log */
+    /** @var  \Skywalker\LogViewer\Entities\Log */
     private Log $log;
 
     /* -----------------------------------------------------------------
@@ -46,7 +49,8 @@ class LogTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_be_instantiated(): void
     {
         $entries = $this->log->entries();
@@ -58,13 +62,9 @@ class LogTest extends TestCase
         static::assertLogEntries($this->log->date, $entries);
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider provideDates
-     *
-     * @param  string  $date
-     */
+    #[Test]
+    #[DataProvider('provideDates')]
+
     public function it_can_get_date($date): void
     {
         $log = $this->getLog($date);
@@ -73,25 +73,17 @@ class LogTest extends TestCase
         static::assertSame($date, $log->date);
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider provideDates
-     *
-     * @param  string  $date
-     */
+    #[Test]
+    #[DataProvider('provideDates')]
+
     public function it_can_get_path($date): void
     {
         static::assertFileExists($this->getLog($date)->getPath());
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider provideDates
-     *
-     * @param  string  $date
-     */
+    #[Test]
+    #[DataProvider('provideDates')]
+
     public function it_can_get_all_entries($date): void
     {
         $entries = $this->getLog($date)->entries();
@@ -101,13 +93,9 @@ class LogTest extends TestCase
         static::assertLogEntries($date, $entries);
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider provideDates
-     *
-     * @param  string  $date
-     */
+    #[Test]
+    #[DataProvider('provideDates')]
+
     public function it_can_get_all_entries_by_level($date): void
     {
         $log = $this->getLog($date);
@@ -118,7 +106,8 @@ class LogTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_log_stats(): void
     {
         foreach ($this->log->stats() as $level => $counter) {
@@ -126,13 +115,9 @@ class LogTest extends TestCase
         }
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider provideDates
-     *
-     * @param  string  $date
-     */
+    #[Test]
+    #[DataProvider('provideDates')]
+
     public function it_can_get_tree($date): void
     {
         $menu = $this->getLog($date)->tree();
@@ -150,13 +135,9 @@ class LogTest extends TestCase
         }
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider provideDates
-     *
-     * @param  string  $date
-     */
+    #[Test]
+    #[DataProvider('provideDates')]
+
     public function it_can_get_translated_menu($date): void
     {
         foreach (self::$locales as $locale) {
@@ -179,7 +160,8 @@ class LogTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_convert_to_json(): void
     {
         static::assertJsonObject($this->log);

@@ -2,9 +2,10 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Commands;
+namespace Skywalker\LogViewer\Tests\Commands;
 
-use Ermradulsharma\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 /**
  * Class     CheckCommandTest
@@ -18,7 +19,8 @@ class CheckCommandTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_check(): void
     {
         $this->artisan('log-viewer:check')

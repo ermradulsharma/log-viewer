@@ -2,9 +2,9 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Http\Routes;
+namespace Skywalker\LogViewer\Http\Routes;
 
-use Ermradulsharma\LogViewer\Http\Controllers\LogViewerController;
+use Skywalker\LogViewer\Http\Controllers\LogViewerController;
 use Skywalker\Support\Routing\RouteRegistrar;
 
 /**

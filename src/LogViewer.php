@@ -2,16 +2,16 @@
 
 
 
-namespace Ermradulsharma\LogViewer;
+namespace Skywalker\LogViewer;
 
-use Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
-use Ermradulsharma\LogViewer\Contracts\Utilities\Factory as FactoryContract;
-use Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels as LogLevelsContract;
-use Ermradulsharma\LogViewer\Contracts\LogViewer as LogViewerContract;
-use Ermradulsharma\LogViewer\Entities\Log;
-use Ermradulsharma\LogViewer\Entities\LogCollection;
-use Ermradulsharma\LogViewer\Entities\LogEntryCollection;
-use Ermradulsharma\LogViewer\Tables\StatsTable;
+use Skywalker\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
+use Skywalker\LogViewer\Contracts\Utilities\Factory as FactoryContract;
+use Skywalker\LogViewer\Contracts\Utilities\LogLevels as LogLevelsContract;
+use Skywalker\LogViewer\Contracts\LogViewer as LogViewerContract;
+use Skywalker\LogViewer\Entities\Log;
+use Skywalker\LogViewer\Entities\LogCollection;
+use Skywalker\LogViewer\Entities\LogEntryCollection;
+use Skywalker\LogViewer\Tables\StatsTable;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
@@ -61,21 +61,21 @@ class LogViewer implements LogViewerContract
     /**
      * The factory instance.
      *
-     * @var \Ermradulsharma\LogViewer\Contracts\Utilities\Factory
+     * @var \Skywalker\LogViewer\Contracts\Utilities\Factory
      */
     protected FactoryContract $factory;
 
     /**
      * The filesystem instance.
      *
-     * @var \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem
+     * @var \Skywalker\LogViewer\Contracts\Utilities\Filesystem
      */
     protected FilesystemContract $filesystem;
 
     /**
      * The log levels instance.
      *
-     * @var \Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels
+     * @var \Skywalker\LogViewer\Contracts\Utilities\LogLevels
      */
     protected LogLevelsContract $levels;
 
@@ -87,9 +87,9 @@ class LogViewer implements LogViewerContract
     /**
      * Create a new instance.
      *
-     * @param \Ermradulsharma\LogViewer\Contracts\Utilities\Factory $factory
-     * @param \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem $filesystem
-     * @param \Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels $levels
+     * @param \Skywalker\LogViewer\Contracts\Utilities\Factory $factory
+     * @param \Skywalker\LogViewer\Contracts\Utilities\Filesystem $filesystem
+     * @param \Skywalker\LogViewer\Contracts\Utilities\LogLevels $levels
      */
     public function __construct(
         FactoryContract $factory,
@@ -181,7 +181,7 @@ class LogViewer implements LogViewerContract
     /**
      * Get all logs.
      *
-     * @return \Ermradulsharma\LogViewer\Entities\LogCollection
+     * @return \Skywalker\LogViewer\Entities\LogCollection
      */
     public function all(): LogCollection
     {
@@ -205,7 +205,7 @@ class LogViewer implements LogViewerContract
      *
      * @param string $date
      *
-     * @return \Ermradulsharma\LogViewer\Entities\Log
+     * @return \Skywalker\LogViewer\Entities\Log
      */
     public function get($date): Log
     {
@@ -218,7 +218,7 @@ class LogViewer implements LogViewerContract
      * @param string $date
      * @param string $level
      *
-     * @return \Ermradulsharma\LogViewer\Entities\LogEntryCollection
+     * @return \Skywalker\LogViewer\Entities\LogEntryCollection
      */
     public function entries($date, $level = 'all'): LogEntryCollection
     {
@@ -264,7 +264,7 @@ class LogViewer implements LogViewerContract
      *
      * @param string|null $locale
      *
-     * @return \Ermradulsharma\LogViewer\Tables\StatsTable
+     * @return \Skywalker\LogViewer\Tables\StatsTable
      */
     public function statsTable($locale = null): StatsTable
     {

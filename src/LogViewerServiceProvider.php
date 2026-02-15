@@ -2,7 +2,7 @@
 
 
 
-namespace Ermradulsharma\LogViewer;
+namespace Skywalker\LogViewer;
 
 use Skywalker\Support\Providers\PackageServiceProvider;
 
@@ -23,7 +23,7 @@ class LogViewerServiceProvider extends PackageServiceProvider
      *
      * @var string
      */
-    protected $vendor = 'ermradulsharma';
+    protected $vendor = 'skywalker';
 
     /**
      * Package name.
@@ -42,17 +42,19 @@ class LogViewerServiceProvider extends PackageServiceProvider
      */
     public function register(): void
     {
+        parent::register();
+
         $this->registerConfig();
 
         $this->registerProvider(Providers\RouteServiceProvider::class);
 
         $this->registerCommands([
-            \Ermradulsharma\LogViewer\Commands\PublishCommand::class,
-            \Ermradulsharma\LogViewer\Commands\StatsCommand::class,
-            \Ermradulsharma\LogViewer\Commands\CheckCommand::class,
-            \Ermradulsharma\LogViewer\Commands\ClearCommand::class,
-            \Ermradulsharma\LogViewer\Commands\AlertCommand::class,
-            \Ermradulsharma\LogViewer\Commands\PruneCommand::class,
+            \Skywalker\LogViewer\Commands\PublishCommand::class,
+            \Skywalker\LogViewer\Commands\StatsCommand::class,
+            \Skywalker\LogViewer\Commands\CheckCommand::class,
+            \Skywalker\LogViewer\Commands\ClearCommand::class,
+            \Skywalker\LogViewer\Commands\AlertCommand::class,
+            \Skywalker\LogViewer\Commands\PruneCommand::class,
         ]);
     }
 
@@ -67,9 +69,7 @@ class LogViewerServiceProvider extends PackageServiceProvider
         $this->loadViews();
 
         if ($this->app->runningInConsole()) {
-            $this->publishConfig();
-            $this->publishTranslations();
-            $this->publishViews();
+            $this->publishAll();
         }
     }
 }

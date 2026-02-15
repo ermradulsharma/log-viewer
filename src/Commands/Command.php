@@ -2,9 +2,9 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Commands;
+namespace Skywalker\LogViewer\Commands;
 
-use Ermradulsharma\LogViewer\Contracts\LogViewer as LogViewerContract;
+use Skywalker\LogViewer\Contracts\LogViewer as LogViewerContract;
 use Skywalker\Support\Console\Command as BaseCommand;
 
 /**
@@ -19,7 +19,7 @@ abstract class Command extends BaseCommand
      | -----------------------------------------------------------------
      */
 
-    /** @var \Ermradulsharma\LogViewer\Contracts\LogViewer */
+    /** @var \Skywalker\LogViewer\Contracts\LogViewer */
     protected LogViewerContract $logViewer;
 
     /* -----------------------------------------------------------------
@@ -30,7 +30,7 @@ abstract class Command extends BaseCommand
     /**
      * Create the command instance.
      *
-     * @param  \Ermradulsharma\LogViewer\Contracts\LogViewer  $logViewer
+     * @param  \Skywalker\LogViewer\Contracts\LogViewer  $logViewer
      */
     public function __construct(LogViewerContract $logViewer)
     {

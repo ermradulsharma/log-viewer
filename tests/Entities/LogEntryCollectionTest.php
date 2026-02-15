@@ -2,10 +2,12 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Entities;
+namespace Skywalker\LogViewer\Tests\Entities;
 
-use Ermradulsharma\LogViewer\Entities\LogEntryCollection;
-use Ermradulsharma\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Entities\LogEntryCollection;
+use Skywalker\LogViewer\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
+
 
 /**
  * Class     LogEntryCollectionTest
@@ -19,7 +21,7 @@ class LogEntryCollectionTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Ermradulsharma\LogViewer\Entities\LogEntryCollection */
+    /** @var  \Skywalker\LogViewer\Entities\LogEntryCollection */
     private LogEntryCollection $entries;
 
     /* -----------------------------------------------------------------
@@ -46,7 +48,8 @@ class LogEntryCollectionTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_be_instantiated(): void
     {
         static::assertInstanceOf(LogEntryCollection::class, $this->entries);
@@ -54,7 +57,8 @@ class LogEntryCollectionTest extends TestCase
         static::assertSame(0, $this->entries->count());
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_load_raw_entries(): void
     {
         foreach ($this->getDates() as $date) {
@@ -66,7 +70,8 @@ class LogEntryCollectionTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_entries_by_level(): void
     {
         foreach ($this->getDates() as $date) {
@@ -80,7 +85,8 @@ class LogEntryCollectionTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_stats(): void
     {
         foreach ($this->getDates() as $date) {
@@ -94,7 +100,8 @@ class LogEntryCollectionTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_tree(): void
     {
         foreach ($this->getDates() as $date) {
@@ -124,7 +131,7 @@ class LogEntryCollectionTest extends TestCase
      *
      * @param  string  $date
      *
-     * @return \Ermradulsharma\LogViewer\Entities\LogEntryCollection
+     * @return \Skywalker\LogViewer\Entities\LogEntryCollection
      */
     private function getEntries($date)
     {

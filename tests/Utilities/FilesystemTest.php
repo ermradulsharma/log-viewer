@@ -2,10 +2,12 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Utilities;
+namespace Skywalker\LogViewer\Tests\Utilities;
 
-use Ermradulsharma\LogViewer\Tests\TestCase;
-use Ermradulsharma\LogViewer\Utilities\Filesystem;
+use Skywalker\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Utilities\Filesystem;
+use PHPUnit\Framework\Attributes\Test;
+
 
 /**
  * Class     FilesystemTest
@@ -19,7 +21,7 @@ class FilesystemTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Ermradulsharma\LogViewer\Utilities\Filesystem */
+    /** @var  \Skywalker\LogViewer\Utilities\Filesystem */
     private Filesystem $filesystem;
 
     /* -----------------------------------------------------------------
@@ -46,13 +48,15 @@ class FilesystemTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_be_instantiated(): void
     {
         static::assertInstanceOf(Filesystem::class, $this->filesystem);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_filesystem_instance(): void
     {
         static::assertInstanceOf(
@@ -61,13 +65,15 @@ class FilesystemTest extends TestCase
         );
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_all_valid_log_files(): void
     {
         static::assertCount(2, $this->filesystem->logs());
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_all_custom_log_files(): void
     {
         $files = $this->filesystem
@@ -77,7 +83,8 @@ class FilesystemTest extends TestCase
         static::assertCount(1, $files);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_all_log_files(): void
     {
         $files = $this->filesystem->all();
@@ -89,7 +96,8 @@ class FilesystemTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_read_file(): void
     {
         $file = $this->filesystem->read($date = '2015-01-01');
@@ -98,7 +106,8 @@ class FilesystemTest extends TestCase
         static::assertStringStartsWith('[' . $date, $file);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_delete_file(): void
     {
         static::createDummyLog(
@@ -125,7 +134,8 @@ class FilesystemTest extends TestCase
         static::assertTrue($deleted, $message);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_files(): void
     {
         $files = $this->filesystem->logs();
@@ -137,7 +147,8 @@ class FilesystemTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_set_a_custom_path(): void
     {
         $this->filesystem->setPath(static::fixturePath('custom-path-logs'));
@@ -152,7 +163,8 @@ class FilesystemTest extends TestCase
     }
 
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_file_path_by_date(): void
     {
         static::assertFileExists(
@@ -160,7 +172,8 @@ class FilesystemTest extends TestCase
         );
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_dates_from_log_files(): void
     {
         static::assertDates(
@@ -168,7 +181,8 @@ class FilesystemTest extends TestCase
         );
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_dates_with_paths_from_log_files(): void
     {
         foreach ($this->filesystem->dates(true) as $date => $path) {
@@ -177,23 +191,26 @@ class FilesystemTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_must_throw_a_filesystem_exception_on_read(): void
     {
-        $this->expectException(\Ermradulsharma\LogViewer\Exceptions\FilesystemException::class);
+        $this->expectException(\Skywalker\LogViewer\Exceptions\FilesystemException::class);
 
         $this->filesystem->read('2222-11-11'); // Future FTW
     }
 
-    /** @test */
+    #[Test]
+
     public function it_must_throw_a_filesystem_exception_on_delete(): void
     {
-        $this->expectException(\Ermradulsharma\LogViewer\Exceptions\FilesystemException::class);
+        $this->expectException(\Skywalker\LogViewer\Exceptions\FilesystemException::class);
 
         $this->filesystem->delete('2222-11-11'); // Future FTW
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_set_and_get_pattern(): void
     {
         static::assertSame(

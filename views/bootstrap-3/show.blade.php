@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @var  Ermradulsharma\LogViewer\Entities\Log                                                                     $log
- * @var  Illuminate\Pagination\LengthAwarePaginator|array<string|int, Ermradulsharma\LogViewer\Entities\LogEntry>  $entries
+ * @var  Skywalker\LogViewer\Entities\Log                                                                     $log
+ * @var  Illuminate\Pagination\LengthAwarePaginator|array<string|int, Skywalker\LogViewer\Entities\LogEntry>  $entries
  * @var  string|null                                                                                          $query
  */
 ?>

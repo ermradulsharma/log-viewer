@@ -2,7 +2,7 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Contracts;
+namespace Skywalker\LogViewer\Contracts;
 
 /**
  * Interface  Table

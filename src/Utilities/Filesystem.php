@@ -2,11 +2,11 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Utilities;
+namespace Skywalker\LogViewer\Utilities;
 
-use Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
-use Ermradulsharma\LogViewer\Exceptions\FilesystemException;
-use Ermradulsharma\LogViewer\Helpers\LogParser;
+use Skywalker\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
+use Skywalker\LogViewer\Exceptions\FilesystemException;
+use Skywalker\LogViewer\Helpers\LogParser;
 use Exception;
 use Illuminate\Filesystem\Filesystem as IlluminateFilesystem;
 
@@ -264,7 +264,7 @@ class Filesystem implements FilesystemContract
      *
      * @return string
      *
-     * @throws \Ermradulsharma\LogViewer\Exceptions\FilesystemException
+     * @throws \Skywalker\LogViewer\Exceptions\FilesystemException
      */
     public function read($date)
     {
@@ -286,7 +286,7 @@ class Filesystem implements FilesystemContract
      *
      * @return bool
      *
-     * @throws \Ermradulsharma\LogViewer\Exceptions\FilesystemException
+     * @throws \Skywalker\LogViewer\Exceptions\FilesystemException
      */
     public function delete(string $date)
     {
@@ -348,7 +348,7 @@ class Filesystem implements FilesystemContract
      *
      * @return string
      *
-     * @throws \Ermradulsharma\LogViewer\Exceptions\FilesystemException
+     * @throws \Skywalker\LogViewer\Exceptions\FilesystemException
      */
     private function getLogPath(string $date)
     {

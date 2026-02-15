@@ -2,11 +2,13 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Entities;
+namespace Skywalker\LogViewer\Tests\Entities;
 
-use Ermradulsharma\LogViewer\Entities\LogCollection;
-use Ermradulsharma\LogViewer\Exceptions\LogNotFoundException;
-use Ermradulsharma\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Entities\LogCollection;
+use Skywalker\LogViewer\Exceptions\LogNotFoundException;
+use Skywalker\LogViewer\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
+
 
 /**
  * Class     LogCollectionTest
@@ -20,7 +22,7 @@ class LogCollectionTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Ermradulsharma\LogViewer\Entities\LogCollection */
+    /** @var  \Skywalker\LogViewer\Entities\LogCollection */
     private LogCollection $logs;
 
     /* -----------------------------------------------------------------
@@ -47,13 +49,15 @@ class LogCollectionTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_be_instantiated(): void
     {
         static::assertInstanceOf(LogCollection::class, $this->logs);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_all_logs(): void
     {
         static::assertCount(2,   $this->logs);
@@ -61,14 +65,15 @@ class LogCollectionTest extends TestCase
         static::assertSame(16, $this->logs->total());
 
         foreach ($this->logs as $date => $log) {
-            /** @var  \Ermradulsharma\LogViewer\Entities\Log  $log */
+            /** @var  \Skywalker\LogViewer\Entities\Log  $log */
             static::assertLog($log, $date);
             static::assertCount(8,  $log->entries());
             static::assertSame(8, $log->entries()->count());
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_a_log_by_date(): void
     {
         $log = $this->logs->get($date = '2015-01-01');
@@ -78,7 +83,8 @@ class LogCollectionTest extends TestCase
         static::assertSame(8, $log->entries()->count());
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_the_log_entries_by_date(): void
     {
         $entries = $this->logs->entries($date = '2015-01-01');
@@ -88,7 +94,8 @@ class LogCollectionTest extends TestCase
         static::assertSame(8, $entries->count());
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_the_log_entries_by_date_and_level(): void
     {
         $date = '2015-01-01';
@@ -108,7 +115,8 @@ class LogCollectionTest extends TestCase
         static::assertSame(8, $entries->count());
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_logs_dates(): void
     {
         foreach ($this->getDates() as $date) {
@@ -116,7 +124,8 @@ class LogCollectionTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_logs_stats(): void
     {
         $stats = $this->logs->stats();
@@ -134,7 +143,8 @@ class LogCollectionTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_log_tree(): void
     {
         $tree = $this->logs->tree();
@@ -151,7 +161,8 @@ class LogCollectionTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_log_menu(): void
     {
         foreach (self::$locales as $locale) {
@@ -170,7 +181,8 @@ class LogCollectionTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_must_throw_a_log_not_found_on_get_method(): void
     {
         $this->expectException(LogNotFoundException::class);
@@ -179,7 +191,8 @@ class LogCollectionTest extends TestCase
         $this->logs->get('2222-01-01');
     }
 
-    /** @test */
+    #[Test]
+
     public function it_must_throw_a_log_not_found_on_log_method(): void
     {
         $this->expectException(LogNotFoundException::class);

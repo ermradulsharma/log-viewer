@@ -2,9 +2,9 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Helpers;
+namespace Skywalker\LogViewer\Helpers;
 
-use Ermradulsharma\LogViewer\Utilities\LogLevels;
+use Skywalker\LogViewer\Utilities\LogLevels;
 use Illuminate\Support\Str;
 
 /**

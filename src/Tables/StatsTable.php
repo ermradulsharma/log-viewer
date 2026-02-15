@@ -2,9 +2,9 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tables;
+namespace Skywalker\LogViewer\Tables;
 
-use Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels as LogLevelsContract;
+use Skywalker\LogViewer\Contracts\Utilities\LogLevels as LogLevelsContract;
 use Illuminate\Support\{Arr, Collection};
 
 /**
@@ -23,7 +23,7 @@ class StatsTable extends AbstractTable
      * Make a stats table instance.
      *
      * @param  array                                               $data
-     * @param  \Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels  $levels
+     * @param  \Skywalker\LogViewer\Contracts\Utilities\LogLevels  $levels
      * @param  string|null                                         $locale
      *
      * @return $this

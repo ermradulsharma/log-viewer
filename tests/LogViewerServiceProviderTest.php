@@ -2,9 +2,11 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests;
+namespace Skywalker\LogViewer\Tests;
 
-use Ermradulsharma\LogViewer\LogViewerServiceProvider;
+use Skywalker\LogViewer\LogViewerServiceProvider;
+use PHPUnit\Framework\Attributes\Test;
+
 
 /**
  * Class     LogViewerServiceProviderTest
@@ -45,7 +47,8 @@ class LogViewerServiceProviderTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_be_instantiated(): void
     {
         $expectations = [
@@ -60,7 +63,8 @@ class LogViewerServiceProviderTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_provides(): void
     {
         $expected = [];

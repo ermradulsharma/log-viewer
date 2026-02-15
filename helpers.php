@@ -1,12 +1,12 @@
 <?php
 
-use Ermradulsharma\LogViewer\Contracts;
+use Skywalker\LogViewer\Contracts;
 
 if (! function_exists('log_viewer')) {
     /**
      * Get the LogViewer instance.
      *
-     * @return \Ermradulsharma\LogViewer\Contracts\LogViewer
+     * @return \Skywalker\LogViewer\Contracts\LogViewer
      */
     function log_viewer()
     {
@@ -18,7 +18,7 @@ if (! function_exists('log_levels')) {
     /**
      * Get the LogLevels instance.
      *
-     * @return \Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels
+     * @return \Skywalker\LogViewer\Contracts\Utilities\LogLevels
      */
     function log_levels()
     {
@@ -30,7 +30,7 @@ if (! function_exists('log_menu')) {
     /**
      * Get the LogMenu instance.
      *
-     * @return \Ermradulsharma\LogViewer\Contracts\Utilities\LogMenu
+     * @return \Skywalker\LogViewer\Contracts\Utilities\LogMenu
      */
     function log_menu()
     {
@@ -42,7 +42,7 @@ if (! function_exists('log_styler')) {
     /**
      * Get the LogStyler instance.
      *
-     * @return \Ermradulsharma\LogViewer\Contracts\Utilities\LogStyler
+     * @return \Skywalker\LogViewer\Contracts\Utilities\LogStyler
      */
     function log_styler()
     {

@@ -2,7 +2,7 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Commands;
+namespace Skywalker\LogViewer\Commands;
 
 /**
  * Class     ClearCommand

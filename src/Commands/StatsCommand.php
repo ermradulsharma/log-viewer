@@ -2,9 +2,9 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Commands;
+namespace Skywalker\LogViewer\Commands;
 
-use Ermradulsharma\LogViewer\Tables\StatsTable;
+use Skywalker\LogViewer\Tables\StatsTable;
 
 /**
  * Class     StatsCommand
@@ -71,7 +71,7 @@ class StatsCommand extends Command
     /**
      * Prepare footer.
      *
-     * @param  \Ermradulsharma\LogViewer\Tables\StatsTable  $stats
+     * @param  \Skywalker\LogViewer\Tables\StatsTable  $stats
      *
      * @return array
      */

@@ -2,7 +2,7 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Exceptions;
+namespace Skywalker\LogViewer\Exceptions;
 
 /**
  * Class     LogNotFoundException

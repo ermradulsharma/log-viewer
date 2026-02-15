@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ermradulsharma\LogViewer\Contracts\Utilities;
+namespace Skywalker\LogViewer\Contracts\Utilities;
 
 use Illuminate\Contracts\Config\Repository as ConfigContract;
 
@@ -44,7 +44,7 @@ interface LogChecker
     /**
      * Set the Filesystem instance.
      *
-     * @param  \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem  $filesystem
+     * @param  \Skywalker\LogViewer\Contracts\Utilities\Filesystem  $filesystem
      *
      * @return self
      */

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Ermradulsharma\LogViewer\Contracts\Utilities;
+namespace Skywalker\LogViewer\Contracts\Utilities;
 
-use Ermradulsharma\LogViewer\Contracts\Patternable;
+use Skywalker\LogViewer\Contracts\Patternable;
 
 /**
  * Interface  Filesystem
@@ -105,7 +105,7 @@ interface Filesystem extends Patternable
      *
      * @return string
      *
-     * @throws \Ermradulsharma\LogViewer\Exceptions\FilesystemException
+     * @throws \Skywalker\LogViewer\Exceptions\FilesystemException
      */
     public function read($date);
 
@@ -116,7 +116,7 @@ interface Filesystem extends Patternable
      *
      * @return bool
      *
-     * @throws \Ermradulsharma\LogViewer\Exceptions\FilesystemException
+     * @throws \Skywalker\LogViewer\Exceptions\FilesystemException
      */
     public function delete(string $date);
 

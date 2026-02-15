@@ -2,9 +2,9 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Providers;
+namespace Skywalker\LogViewer\Providers;
 
-use Ermradulsharma\LogViewer\Http\Routes\LogViewerRoute;
+use Skywalker\LogViewer\Http\Routes\LogViewerRoute;
 use Skywalker\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 /**

@@ -2,9 +2,9 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Entities;
+namespace Skywalker\LogViewer\Entities;
 
-use Ermradulsharma\LogViewer\Helpers\LogParser;
+use Skywalker\LogViewer\Helpers\LogParser;
 use Carbon\Carbon;
 use Illuminate\Contracts\Support\{Arrayable, Jsonable};
 use JsonSerializable;
@@ -197,7 +197,7 @@ class LogEntry implements Arrayable, Jsonable, JsonSerializable
      *
      * @param  string  $datetime
      *
-     * @return \Ermradulsharma\LogViewer\Entities\LogEntry
+     * @return \Skywalker\LogViewer\Entities\LogEntry
      */
     private function setDatetime($datetime)
     {

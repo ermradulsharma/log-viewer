@@ -2,11 +2,13 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Providers;
+namespace Skywalker\LogViewer\Tests\Providers;
 
-use Ermradulsharma\LogViewer\Contracts;
-use Ermradulsharma\LogViewer\Providers\DeferredServicesProvider;
-use Ermradulsharma\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Contracts;
+use Skywalker\LogViewer\Providers\DeferredServicesProvider;
+use Skywalker\LogViewer\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
+
 
 /**
  * Class     DeferredServicesProviderTest
@@ -20,7 +22,7 @@ class DeferredServicesProviderTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Ermradulsharma\LogViewer\Providers\DeferredServicesProvider */
+    /** @var  \Skywalker\LogViewer\Providers\DeferredServicesProvider */
     private DeferredServicesProvider $provider;
 
     /* -----------------------------------------------------------------
@@ -47,8 +49,7 @@ class DeferredServicesProviderTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
-
+    #[Test]
     public function it_can_be_instantiated(): void
     {
         $expectations = [
@@ -63,7 +64,8 @@ class DeferredServicesProviderTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_provides(): void
     {
         $expected = [

@@ -2,10 +2,12 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Entities;
+namespace Skywalker\LogViewer\Tests\Entities;
 
-use Ermradulsharma\LogViewer\Entities\LogEntry;
-use Ermradulsharma\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Entities\LogEntry;
+use Skywalker\LogViewer\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
+
 
 /**
  * Class     LogEntryTest
@@ -19,7 +21,7 @@ class LogEntryTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Ermradulsharma\LogViewer\Entities\LogEntry */
+    /** @var  \Skywalker\LogViewer\Entities\LogEntry */
     private LogEntry $entry;
 
     /* -----------------------------------------------------------------
@@ -46,7 +48,8 @@ class LogEntryTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_be_instantiated(): void
     {
         static::assertInstanceOf(LogEntry::class, $this->entry);
@@ -54,13 +57,15 @@ class LogEntryTest extends TestCase
         static::assertFalse($this->entry->hasContext());
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_convert_to_json(): void
     {
         static::assertJsonObject($this->entry);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_check_if_same_level(): void
     {
         $level = $this->entry->level;
@@ -68,13 +73,15 @@ class LogEntryTest extends TestCase
         static::assertTrue($this->entry->isSameLevel($level));
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_stack(): void
     {
         static::assertNotSame($this->entry->stack, $this->entry->stack());
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_extract_context(): void
     {
         $entry = new LogEntry(

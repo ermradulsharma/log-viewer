@@ -2,9 +2,9 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Commands;
+namespace Skywalker\LogViewer\Commands;
 
-use Ermradulsharma\LogViewer\Contracts\Utilities\LogChecker as LogCheckerContract;
+use Skywalker\LogViewer\Contracts\Utilities\LogChecker as LogCheckerContract;
 
 /**
  * Class     CheckCommand
@@ -47,7 +47,7 @@ class CheckCommand extends Command
     /**
      * Get the Log Checker instance.
      *
-     * @return \Ermradulsharma\LogViewer\Contracts\Utilities\LogChecker
+     * @return \Skywalker\LogViewer\Contracts\Utilities\LogChecker
      */
     protected function getChecker()
     {

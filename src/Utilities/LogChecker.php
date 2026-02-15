@@ -2,10 +2,10 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Utilities;
+namespace Skywalker\LogViewer\Utilities;
 
-use Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
-use Ermradulsharma\LogViewer\Contracts\Utilities\LogChecker as LogCheckerContract;
+use Skywalker\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
+use Skywalker\LogViewer\Contracts\Utilities\LogChecker as LogCheckerContract;
 use Illuminate\Contracts\Config\Repository as ConfigContract;
 
 /**
@@ -30,7 +30,7 @@ class LogChecker implements LogCheckerContract
     /**
      * The filesystem instance.
      *
-     * @var \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem
+     * @var \Skywalker\LogViewer\Contracts\Utilities\Filesystem
      */
     private FilesystemContract $filesystem;
 
@@ -71,7 +71,7 @@ class LogChecker implements LogCheckerContract
      * LogChecker constructor.
      *
      * @param  \Illuminate\Contracts\Config\Repository              $config
-     * @param  \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem  $filesystem
+     * @param  \Skywalker\LogViewer\Contracts\Utilities\Filesystem  $filesystem
      */
     public function __construct(ConfigContract $config, FilesystemContract $filesystem)
     {
@@ -102,7 +102,7 @@ class LogChecker implements LogCheckerContract
     /**
      * Set the Filesystem instance.
      *
-     * @param  \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem  $filesystem
+     * @param  \Skywalker\LogViewer\Contracts\Utilities\Filesystem  $filesystem
      *
      * @return self
      */
@@ -221,7 +221,7 @@ class LogChecker implements LogCheckerContract
     /**
      * Refresh the checks.
      *
-     * @return \Ermradulsharma\LogViewer\Utilities\LogChecker
+     * @return \Skywalker\LogViewer\Utilities\LogChecker
      */
     private function refresh()
     {

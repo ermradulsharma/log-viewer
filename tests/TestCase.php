@@ -2,15 +2,15 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests;
+namespace Skywalker\LogViewer\Tests;
 
-use Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem;
-use Ermradulsharma\LogViewer\Entities\Log;
-use Ermradulsharma\LogViewer\Entities\LogEntry;
-use Ermradulsharma\LogViewer\Entities\LogEntryCollection;
-use Ermradulsharma\LogViewer\Helpers\LogParser;
-use Ermradulsharma\LogViewer\LogViewerServiceProvider;
-use Ermradulsharma\LogViewer\Providers\DeferredServicesProvider;
+use Skywalker\LogViewer\Contracts\Utilities\Filesystem;
+use Skywalker\LogViewer\Entities\Log;
+use Skywalker\LogViewer\Entities\LogEntry;
+use Skywalker\LogViewer\Entities\LogEntryCollection;
+use Skywalker\LogViewer\Helpers\LogParser;
+use Skywalker\LogViewer\LogViewerServiceProvider;
+use Skywalker\LogViewer\Providers\DeferredServicesProvider;
 use Carbon\Carbon;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Support\Arr;
@@ -180,7 +180,7 @@ abstract class TestCase extends BaseTestCase
     /**
      * Assert Log object.
      |
-     * @param  \Ermradulsharma\LogViewer\Entities\Log  $log
+     * @param  \Skywalker\LogViewer\Entities\Log  $log
      * @param  string                             $date
      */
     protected static function assertLog(Log $log, $date)
@@ -193,7 +193,7 @@ abstract class TestCase extends BaseTestCase
      * Assert Log entries object.
      |
      * @param  string                                            $date
-     * @param  \Ermradulsharma\LogViewer\Entities\LogEntryCollection  $entries
+     * @param  \Skywalker\LogViewer\Entities\LogEntryCollection  $entries
      */
     protected static function assertLogEntries($date, LogEntryCollection $entries)
     {
@@ -206,7 +206,7 @@ abstract class TestCase extends BaseTestCase
      * Assert log entry object.
      |
      * @param  string                                  $date
-     * @param  \Ermradulsharma\LogViewer\Entities\LogEntry  $entry
+     * @param  \Skywalker\LogViewer\Entities\LogEntry  $entry
      */
     protected static function assertLogEntry($date, LogEntry $entry)
     {
@@ -365,7 +365,7 @@ abstract class TestCase extends BaseTestCase
     /**
      * Get Filesystem Utility instance.
      *
-     * @return \Ermradulsharma\LogViewer\Utilities\Filesystem
+     * @return \Skywalker\LogViewer\Utilities\Filesystem
      */
     protected function filesystem()
     {
@@ -438,7 +438,7 @@ abstract class TestCase extends BaseTestCase
      *
      * @param  string  $date
      *
-     * @return \Ermradulsharma\LogViewer\Entities\Log
+     * @return \Skywalker\LogViewer\Entities\Log
      */
     protected function getLog($date)
     {

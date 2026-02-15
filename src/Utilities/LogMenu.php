@@ -2,11 +2,11 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Utilities;
+namespace Skywalker\LogViewer\Utilities;
 
-use Ermradulsharma\LogViewer\Contracts\Utilities\LogMenu as LogMenuContract;
-use Ermradulsharma\LogViewer\Contracts\Utilities\LogStyler as LogStylerContract;
-use Ermradulsharma\LogViewer\Entities\Log;
+use Skywalker\LogViewer\Contracts\Utilities\LogMenu as LogMenuContract;
+use Skywalker\LogViewer\Contracts\Utilities\LogStyler as LogStylerContract;
+use Skywalker\LogViewer\Entities\Log;
 use Illuminate\Contracts\Config\Repository as ConfigContract;
 
 /**
@@ -31,7 +31,7 @@ class LogMenu implements LogMenuContract
     /**
      * The log styler instance.
      *
-     * @var \Ermradulsharma\LogViewer\Contracts\Utilities\LogStyler
+     * @var \Skywalker\LogViewer\Contracts\Utilities\LogStyler
      */
     private LogStylerContract $styler;
 
@@ -44,7 +44,7 @@ class LogMenu implements LogMenuContract
      * LogMenu constructor.
      *
      * @param  \Illuminate\Contracts\Config\Repository             $config
-     * @param  \Ermradulsharma\LogViewer\Contracts\Utilities\LogStyler  $styler
+     * @param  \Skywalker\LogViewer\Contracts\Utilities\LogStyler  $styler
      */
     public function __construct(ConfigContract $config, LogStylerContract $styler)
     {
@@ -74,7 +74,7 @@ class LogMenu implements LogMenuContract
     /**
      * Set the log styler instance.
      *
-     * @param  \Ermradulsharma\LogViewer\Contracts\Utilities\LogStyler  $styler
+     * @param  \Skywalker\LogViewer\Contracts\Utilities\LogStyler  $styler
      *
      * @return self
      */
@@ -93,7 +93,7 @@ class LogMenu implements LogMenuContract
     /**
      * Make log menu.
      *
-     * @param  \Ermradulsharma\LogViewer\Entities\Log  $log
+     * @param  \Skywalker\LogViewer\Entities\Log  $log
      * @param  bool                               $trans
      *
      * @return array

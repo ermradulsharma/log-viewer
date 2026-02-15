@@ -2,9 +2,11 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Commands;
+namespace Skywalker\LogViewer\Tests\Commands;
 
-use Ermradulsharma\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * Class     PublishCommandTest
@@ -31,7 +33,8 @@ class PublishCommandTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_publish_all(): void
     {
         $this->artisan('log-viewer:publish')
@@ -42,7 +45,8 @@ class PublishCommandTest extends TestCase
         // TODO: Add views assertions
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_publish_all_with_force(): void
     {
         $this->artisan('log-viewer:publish', ['--force'   => true])
@@ -53,7 +57,8 @@ class PublishCommandTest extends TestCase
         // TODO: Add views assertions
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_publish_only_config(): void
     {
         $this->artisan('log-viewer:publish', ['--tag' => 'config'])
@@ -64,13 +69,9 @@ class PublishCommandTest extends TestCase
         // TODO: Add views assertions
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider  providePublishableTranslationsTags
-     *
-     * @param  string  $tag
-     */
+    #[Test]
+    #[DataProvider('providePublishableTranslationsTags')]
+
     public function it_can_publish_only_translations(string $tag): void
     {
         $this->artisan('log-viewer:publish', ['--tag' => $tag])

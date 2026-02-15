@@ -2,21 +2,21 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Providers;
+namespace Skywalker\LogViewer\Providers;
 
-use Ermradulsharma\LogViewer\Contracts\LogViewer as LogViewerContract;
-use Ermradulsharma\LogViewer\Contracts\Utilities\Factory as FactoryContract;
-use Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
-use Ermradulsharma\LogViewer\Contracts\Utilities\LogChecker as LogCheckerContract;
-use Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels as LogLevelsContract;
-use Ermradulsharma\LogViewer\Contracts\Utilities\LogMenu as LogMenuContract;
-use Ermradulsharma\LogViewer\Contracts\Utilities\LogStyler as LogStylerContract;
-use Ermradulsharma\LogViewer\LogViewer;
-use Ermradulsharma\LogViewer\Utilities;
+use Skywalker\LogViewer\Contracts\LogViewer as LogViewerContract;
+use Skywalker\LogViewer\Contracts\Utilities\Factory as FactoryContract;
+use Skywalker\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
+use Skywalker\LogViewer\Contracts\Utilities\LogChecker as LogCheckerContract;
+use Skywalker\LogViewer\Contracts\Utilities\LogLevels as LogLevelsContract;
+use Skywalker\LogViewer\Contracts\Utilities\LogMenu as LogMenuContract;
+use Skywalker\LogViewer\Contracts\Utilities\LogStyler as LogStylerContract;
+use Skywalker\LogViewer\LogViewer;
+use Skywalker\LogViewer\Utilities;
 use Skywalker\Support\Providers\ServiceProvider;
 
 if (interface_exists('Illuminate\Contracts\Support\DeferrableProvider')) {
-    class_alias('Illuminate\Contracts\Support\DeferrableProvider', 'Ermradulsharma\LogViewer\Providers\DeferrableProvider');
+    class_alias('Illuminate\Contracts\Support\DeferrableProvider', 'Skywalker\LogViewer\Providers\DeferrableProvider');
 } else {
     interface DeferrableProvider {}
 }

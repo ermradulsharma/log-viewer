@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @var  Ermradulsharma\LogViewer\Entities\Log            $log
+ * @var  Skywalker\LogViewer\Entities\Log            $log
  * @var  Illuminate\Pagination\LengthAwarePaginator  $entries
  * @var  string|null                                 $query
  */

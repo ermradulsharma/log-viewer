@@ -2,10 +2,12 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Utilities;
+namespace Skywalker\LogViewer\Tests\Utilities;
 
-use Ermradulsharma\LogViewer\Utilities\LogLevels;
-use Ermradulsharma\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Utilities\LogLevels;
+use Skywalker\LogViewer\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
+
 
 /**
  * Class     LogLevelsTest
@@ -19,7 +21,7 @@ class LogLevelsTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Ermradulsharma\LogViewer\Utilities\LogLevels  */
+    /** @var  \Skywalker\LogViewer\Utilities\LogLevels  */
     private LogLevels $levels;
 
     /* -----------------------------------------------------------------
@@ -31,7 +33,7 @@ class LogLevelsTest extends TestCase
     {
         parent::setUp();
 
-        $this->levels = $this->app->make(\Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels::class);
+        $this->levels = $this->app->make(\Skywalker\LogViewer\Contracts\Utilities\LogLevels::class);
     }
 
     public function tearDown(): void
@@ -46,25 +48,29 @@ class LogLevelsTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_be_instantiated(): void
     {
         static::assertInstanceOf(LogLevels::class, $this->levels);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_all_levels(): void
     {
         static::assertLevels($this->levels->lists());
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_all_levels_by_static_method(): void
     {
         static::assertLevels(LogLevels::all());
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_all_translated_levels(): void
     {
         foreach (self::$locales as $locale) {
@@ -76,7 +82,8 @@ class LogLevelsTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_must_choose_the_log_viewer_locale_instead_of_app_locale(): void
     {
         static::assertNotEquals('auto', $this->levels->getLocale());
@@ -88,7 +95,8 @@ class LogLevelsTest extends TestCase
         static::assertNotEquals($this->app->getLocale(), $this->levels->getLocale());
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_translate_levels_automatically(): void
     {
         foreach (self::$locales as $locale) {

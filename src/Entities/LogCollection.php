@@ -2,10 +2,10 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Entities;
+namespace Skywalker\LogViewer\Entities;
 
-use Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
-use Ermradulsharma\LogViewer\Exceptions\LogNotFoundException;
+use Skywalker\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
+use Skywalker\LogViewer\Exceptions\LogNotFoundException;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\LazyCollection;
 
@@ -21,7 +21,7 @@ class LogCollection extends LazyCollection
      | -----------------------------------------------------------------
      */
 
-    /** @var \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem */
+    /** @var \Skywalker\LogViewer\Contracts\Utilities\Filesystem */
     private FilesystemContract $filesystem;
 
     /* -----------------------------------------------------------------
@@ -58,9 +58,9 @@ class LogCollection extends LazyCollection
     /**
      * Set the filesystem instance.
      *
-     * @param  \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem  $filesystem
+     * @param  \Skywalker\LogViewer\Contracts\Utilities\Filesystem  $filesystem
      *
-     * @return \Ermradulsharma\LogViewer\Entities\LogCollection
+     * @return \Skywalker\LogViewer\Entities\LogCollection
      */
     public function setFilesystem(FilesystemContract $filesystem)
     {
@@ -80,9 +80,9 @@ class LogCollection extends LazyCollection
      * @param  string      $date
      * @param  mixed|null  $default
      *
-     * @return \Ermradulsharma\LogViewer\Entities\Log
+     * @return \Skywalker\LogViewer\Entities\Log
      *
-     * @throws \Ermradulsharma\LogViewer\Exceptions\LogNotFoundException
+     * @throws \Skywalker\LogViewer\Exceptions\LogNotFoundException
      */
     public function get($date, $default = null)
     {
@@ -120,7 +120,7 @@ class LogCollection extends LazyCollection
      *
      * @param  string  $date
      *
-     * @return \Ermradulsharma\LogViewer\Entities\Log
+     * @return \Skywalker\LogViewer\Entities\Log
      */
     public function log($date)
     {
@@ -134,7 +134,7 @@ class LogCollection extends LazyCollection
      * @param  string  $date
      * @param  string  $level
      *
-     * @return \Ermradulsharma\LogViewer\Entities\LogEntryCollection
+     * @return \Skywalker\LogViewer\Entities\LogEntryCollection
      */
     public function entries($date, $level = 'all')
     {
@@ -151,7 +151,7 @@ class LogCollection extends LazyCollection
         $stats = [];
 
         foreach ($this->all() as $date => $log) {
-            /** @var \Ermradulsharma\LogViewer\Entities\Log $log */
+            /** @var \Skywalker\LogViewer\Entities\Log $log */
             $stats[$date] = $log->stats();
         }
 
@@ -194,7 +194,7 @@ class LogCollection extends LazyCollection
         $tree = [];
 
         foreach ($this->all() as $date => $log) {
-            /** @var \Ermradulsharma\LogViewer\Entities\Log $log */
+            /** @var \Skywalker\LogViewer\Entities\Log $log */
             $tree[$date] = $log->tree($trans);
         }
 
@@ -213,7 +213,7 @@ class LogCollection extends LazyCollection
         $menu = [];
 
         foreach ($this->all() as $date => $log) {
-            /** @var \Ermradulsharma\LogViewer\Entities\Log $log */
+            /** @var \Skywalker\LogViewer\Entities\Log $log */
             $menu[$date] = $log->menu($trans);
         }
 

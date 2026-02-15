@@ -2,7 +2,10 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests;
+namespace Skywalker\LogViewer\Tests;
+
+use PHPUnit\Framework\Attributes\Test;
+
 
 /**
  * Class     RoutesTest
@@ -16,7 +19,8 @@ class RoutesTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_see_dashboard_page(): void
     {
         $this->get(route('log-viewer::dashboard'))
@@ -25,7 +29,8 @@ class RoutesTest extends TestCase
             ->assertSee('Log Level Distribution');
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_see_logs_page(): void
     {
         $this->get(route('log-viewer::logs.list'))
@@ -33,7 +38,8 @@ class RoutesTest extends TestCase
             ->assertSee('Log Files');
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_show_a_log_page(): void
     {
         $date = '2015-01-01';
@@ -45,7 +51,8 @@ class RoutesTest extends TestCase
             ->assertSee('Log Viewer');
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_see_a_filtered_log_entries_page(): void
     {
         $date = '2015-01-01';
@@ -57,7 +64,8 @@ class RoutesTest extends TestCase
             ->assertSee('Log Viewer');
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_search_logs_page(): void
     {
         $date = '2015-01-01';
@@ -69,7 +77,8 @@ class RoutesTest extends TestCase
             ->assertSee('Log Viewer');
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_download_a_log_file(): void
     {
         $date = '2023-01-01';
@@ -79,7 +88,8 @@ class RoutesTest extends TestCase
             ->assertSuccessful();
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_delete_a_log_file(): void
     {
         $date = date('Y-m-d');
@@ -90,7 +100,8 @@ class RoutesTest extends TestCase
             ->assertJson(['result' => 'success']);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_store_a_note(): void
     {
         $this->post(route('log-viewer::notes.store'), [
@@ -103,7 +114,8 @@ class RoutesTest extends TestCase
         $this->assertFileExists(storage_path('logs/log-viewer-notes.json'));
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_save_a_search(): void
     {
         $this->post(route('log-viewer::searches.save'), [
@@ -116,7 +128,8 @@ class RoutesTest extends TestCase
         $this->assertFileExists(storage_path('logs/log-viewer-searches.json'));
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_save_notification_settings(): void
     {
         $this->post(route('log-viewer::notifications.save'), [
@@ -131,7 +144,8 @@ class RoutesTest extends TestCase
         $this->assertFileExists(storage_path('logs/log-viewer-notifications.json'));
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_cleanup_logs(): void
     {
         $this->post(route('log-viewer::cleanup-logs'), [], ['HTTP_X-Requested-With' => 'XMLHttpRequest'])
@@ -139,7 +153,8 @@ class RoutesTest extends TestCase
             ->assertJson(['success' => true]);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_explain_error(): void
     {
         $this->get(route('log-viewer::ai-explain', ['message' => 'Class "Missing" not found']))
@@ -147,7 +162,8 @@ class RoutesTest extends TestCase
             ->assertJson(['success' => true]);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_push_to_tracker(): void
     {
         $this->post(route('log-viewer::push-to-tracker'), [
@@ -159,7 +175,8 @@ class RoutesTest extends TestCase
             ->assertJson(['success' => true]);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_must_throw_log_not_found_exception_on_show(): void
     {
         $response = $this->get(route('log-viewer::logs.show', ['0000-00-00']));

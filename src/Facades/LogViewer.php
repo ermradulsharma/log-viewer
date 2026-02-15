@@ -1,6 +1,6 @@
 <?php
 
-namespace Ermradulsharma\LogViewer\Facades;
+namespace Skywalker\LogViewer\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @author   Mradul Sharma <skywalkerlknw@gmail.com>
  *
- * @see \Ermradulsharma\LogViewer\LogViewer
+ * @see \Skywalker\LogViewer\LogViewer
  */
 class LogViewer extends Facade
 {
@@ -20,6 +20,6 @@ class LogViewer extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \Ermradulsharma\LogViewer\Contracts\LogViewer::class;
+        return \Skywalker\LogViewer\Contracts\LogViewer::class;
     }
 }

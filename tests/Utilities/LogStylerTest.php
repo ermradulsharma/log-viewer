@@ -2,11 +2,13 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Utilities;
+namespace Skywalker\LogViewer\Tests\Utilities;
 
-use Ermradulsharma\LogViewer\Tests\TestCase;
-use Ermradulsharma\LogViewer\Utilities\LogStyler;
+use Skywalker\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Utilities\LogStyler;
 use Illuminate\Support\HtmlString;
+use PHPUnit\Framework\Attributes\Test;
+
 
 /**
  * Class     LogStylerTest
@@ -20,7 +22,7 @@ class LogStylerTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Ermradulsharma\LogViewer\Utilities\LogStyler */
+    /** @var  \Skywalker\LogViewer\Utilities\LogStyler */
     private LogStyler $styler;
 
     /* -----------------------------------------------------------------
@@ -32,7 +34,7 @@ class LogStylerTest extends TestCase
     {
         parent::setUp();
 
-        $this->styler = $this->app->make(\Ermradulsharma\LogViewer\Contracts\Utilities\LogStyler::class);
+        $this->styler = $this->app->make(\Skywalker\LogViewer\Contracts\Utilities\LogStyler::class);
     }
 
     protected function tearDown(): void
@@ -47,13 +49,15 @@ class LogStylerTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_ben_instantiated()
     {
         static::assertInstanceOf(LogStyler::class, $this->styler);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_icon()
     {
         foreach (self::$logLevels as $level) {
@@ -64,7 +68,8 @@ class LogStylerTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_default_when_icon_not_found()
     {
         $icon = $this->styler->icon('danger', $default = 'fa fa-fw fa-danger');
@@ -73,7 +78,8 @@ class LogStylerTest extends TestCase
         static::assertSame('<i class="' . $default . '"></i>', $icon->toHtml());
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_color()
     {
         foreach (self::$logLevels as $level) {
@@ -81,7 +87,8 @@ class LogStylerTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_default_when_color_not_found()
     {
         $color = $this->styler->color('danger', $default = '#BADA55');
@@ -90,7 +97,8 @@ class LogStylerTest extends TestCase
         static::assertSame($default, $color);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_use_helper_to_get_icon()
     {
         foreach (self::$logLevels as $level) {
@@ -101,7 +109,8 @@ class LogStylerTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_use_helper_get_color()
     {
         foreach (self::$logLevels as $level) {
@@ -109,7 +118,8 @@ class LogStylerTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_string_to_highlight()
     {
         $expected = [

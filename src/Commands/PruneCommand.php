@@ -1,6 +1,6 @@
 <?php
 
-namespace Ermradulsharma\LogViewer\Commands;
+namespace Skywalker\LogViewer\Commands;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\File;

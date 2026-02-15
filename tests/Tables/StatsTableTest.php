@@ -2,11 +2,13 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Tests\Tables;
+namespace Skywalker\LogViewer\Tests\Tables;
 
-use Ermradulsharma\LogViewer\Contracts\Table as TableContract;
-use Ermradulsharma\LogViewer\Tables\StatsTable;
-use Ermradulsharma\LogViewer\Tests\TestCase;
+use Skywalker\LogViewer\Contracts\Table as TableContract;
+use Skywalker\LogViewer\Tables\StatsTable;
+use Skywalker\LogViewer\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
+
 
 /**
  * Class     StatsTableTest
@@ -20,7 +22,7 @@ class StatsTableTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Ermradulsharma\LogViewer\Tables\StatsTable */
+    /** @var  \Skywalker\LogViewer\Tables\StatsTable */
     private StatsTable $table;
 
     /** @var array */
@@ -53,13 +55,15 @@ class StatsTableTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @test */
+    #[Test]
+
     public function it_can_be_instantiated(): void
     {
         static::assertInstanceOf(StatsTable::class, $this->table);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_make_instance(): void
     {
         $this->table = StatsTable::make(
@@ -70,25 +74,29 @@ class StatsTableTest extends TestCase
         static::assertTable($this->table);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_header(): void
     {
         static::assertTableHeader($this->table);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_rows(): void
     {
         static::assertTableRows($this->table);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_footer(): void
     {
         static::assertTableFooter($this->table);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_raw_data(): void
     {
         static::assertEquals(
@@ -97,7 +105,8 @@ class StatsTableTest extends TestCase
         );
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_totals(): void
     {
         $totals = $this->table->totals();
@@ -105,7 +114,8 @@ class StatsTableTest extends TestCase
         static::assertInstanceOf(\Illuminate\Support\Collection::class, $totals);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_json_data_for_chart(): void
     {
         $json = $this->table->totalsJson();
@@ -113,20 +123,22 @@ class StatsTableTest extends TestCase
         static::assertJson($json);
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_stats_table_via_log_viewer(): void
     {
-        /** @var  \Ermradulsharma\LogViewer\Contracts\LogViewer  $logViewer */
-        $logViewer = $this->app->make(\Ermradulsharma\LogViewer\Contracts\LogViewer::class);
+        /** @var  \Skywalker\LogViewer\Contracts\LogViewer  $logViewer */
+        $logViewer = $this->app->make(\Skywalker\LogViewer\Contracts\LogViewer::class);
 
         static::assertTable($logViewer->statsTable());
     }
 
-    /** @test */
+    #[Test]
+
     public function it_can_get_stats_table_via_log_factory(): void
     {
-        /** @var  \Ermradulsharma\LogViewer\Contracts\Utilities\Factory  $logFactory */
-        $logFactory = $this->app->make(\Ermradulsharma\LogViewer\Contracts\Utilities\Factory::class);
+        /** @var  \Skywalker\LogViewer\Contracts\Utilities\Factory  $logFactory */
+        $logFactory = $this->app->make(\Skywalker\LogViewer\Contracts\Utilities\Factory::class);
 
         static::assertTable($logFactory->statsTable());
     }
@@ -139,7 +151,7 @@ class StatsTableTest extends TestCase
     /**
      * Assert table instance.
      *
-     * @param  \Ermradulsharma\LogViewer\Contracts\Table  $table
+     * @param  \Skywalker\LogViewer\Contracts\Table  $table
      */
     protected static function assertTable(TableContract $table): void
     {
@@ -151,7 +163,7 @@ class StatsTableTest extends TestCase
     /**
      * Assert table header.
      *
-     * @param  \Ermradulsharma\LogViewer\Contracts\Table  $table
+     * @param  \Skywalker\LogViewer\Contracts\Table  $table
      */
     protected static function assertTableHeader(TableContract $table): void
     {
@@ -164,7 +176,7 @@ class StatsTableTest extends TestCase
     /**
      * Assert table rows.
      *
-     * @param  \Ermradulsharma\LogViewer\Contracts\Table  $table
+     * @param  \Skywalker\LogViewer\Contracts\Table  $table
      */
     protected static function assertTableRows(TableContract $table): void
     {
@@ -193,7 +205,7 @@ class StatsTableTest extends TestCase
     /**
      * Assert table footer.
      *
-     * @param  \Ermradulsharma\LogViewer\Contracts\Table  $table
+     * @param  \Skywalker\LogViewer\Contracts\Table  $table
      */
     protected static function assertTableFooter(TableContract $table): void
     {
@@ -210,20 +222,20 @@ class StatsTableTest extends TestCase
     /**
      * Get the LogViewer instance.
      *
-     * @return \Ermradulsharma\LogViewer\Contracts\LogViewer
+     * @return \Skywalker\LogViewer\Contracts\LogViewer
      */
     protected function getLogViewerInstance()
     {
-        return $this->app->make(\Ermradulsharma\LogViewer\Contracts\LogViewer::class);
+        return $this->app->make(\Skywalker\LogViewer\Contracts\LogViewer::class);
     }
 
     /**
      * Get the LogLevels instance.
      *
-     * @return \Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels
+     * @return \Skywalker\LogViewer\Contracts\Utilities\LogLevels
      */
     protected function getLogLevelsInstance()
     {
-        return $this->app->make(\Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels::class);
+        return $this->app->make(\Skywalker\LogViewer\Contracts\Utilities\LogLevels::class);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-use Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem;
+use Skywalker\LogViewer\Contracts\Utilities\Filesystem;
 
 return [
 

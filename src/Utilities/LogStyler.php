@@ -2,9 +2,9 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Utilities;
+namespace Skywalker\LogViewer\Utilities;
 
-use Ermradulsharma\LogViewer\Contracts\Utilities\LogStyler as LogStylerContract;
+use Skywalker\LogViewer\Contracts\Utilities\LogStyler as LogStylerContract;
 use Illuminate\Contracts\Config\Repository as ConfigContract;
 use Illuminate\Support\HtmlString;
 

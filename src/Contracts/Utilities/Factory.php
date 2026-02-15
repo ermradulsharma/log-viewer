@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Ermradulsharma\LogViewer\Contracts\Utilities;
+namespace Skywalker\LogViewer\Contracts\Utilities;
 
-use Ermradulsharma\LogViewer\Contracts\Patternable;
-use Ermradulsharma\LogViewer\Contracts\Utilities\{Filesystem, LogLevels};
+use Skywalker\LogViewer\Contracts\Patternable;
+use Skywalker\LogViewer\Contracts\Utilities\{Filesystem, LogLevels};
 
 /**
  * Interface  Factory
@@ -22,14 +22,14 @@ interface Factory extends Patternable
     /**
      * Get the filesystem instance.
      *
-     * @return \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem
+     * @return \Skywalker\LogViewer\Contracts\Utilities\Filesystem
      */
     public function getFilesystem();
 
     /**
      * Set the filesystem instance.
      *
-     * @param  \Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem  $filesystem
+     * @param  \Skywalker\LogViewer\Contracts\Utilities\Filesystem  $filesystem
      *
      * @return self
      */
@@ -38,14 +38,14 @@ interface Factory extends Patternable
     /**
      * Get the log levels instance.
      *
-     * @return  \Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels  $levels
+     * @return  \Skywalker\LogViewer\Contracts\Utilities\LogLevels  $levels
      */
     public function getLevels();
 
     /**
      * Set the log levels instance.
      *
-     * @param  \Ermradulsharma\LogViewer\Contracts\Utilities\LogLevels  $levels
+     * @param  \Skywalker\LogViewer\Contracts\Utilities\LogLevels  $levels
      *
      * @return self
      */
@@ -63,7 +63,7 @@ interface Factory extends Patternable
     /**
      * Get all logs.
      *
-     * @return \Ermradulsharma\LogViewer\Entities\LogCollection
+     * @return \Skywalker\LogViewer\Entities\LogCollection
      */
     public function logs();
 
@@ -77,7 +77,7 @@ interface Factory extends Patternable
      *
      * @see logs
      *
-     * @return \Ermradulsharma\LogViewer\Entities\LogCollection
+     * @return \Skywalker\LogViewer\Entities\LogCollection
      */
     public function all();
 
@@ -95,7 +95,7 @@ interface Factory extends Patternable
      *
      * @param  string  $date
      *
-     * @return \Ermradulsharma\LogViewer\Entities\Log
+     * @return \Skywalker\LogViewer\Entities\Log
      */
     public function log($date);
 
@@ -104,7 +104,7 @@ interface Factory extends Patternable
      *
      * @param  string  $date
      *
-     * @return \Ermradulsharma\LogViewer\Entities\Log
+     * @return \Skywalker\LogViewer\Entities\Log
      */
     public function get($date);
 
@@ -114,7 +114,7 @@ interface Factory extends Patternable
      * @param  string  $date
      * @param  string  $level
      *
-     * @return \Ermradulsharma\LogViewer\Entities\LogEntryCollection
+     * @return \Skywalker\LogViewer\Entities\LogEntryCollection
      */
     public function entries($date, $level = 'all');
 
@@ -171,7 +171,7 @@ interface Factory extends Patternable
      *
      * @param  string|null  $locale
      *
-     * @return \Ermradulsharma\LogViewer\Tables\StatsTable
+     * @return \Skywalker\LogViewer\Tables\StatsTable
      */
     public function statsTable($locale = null);
 

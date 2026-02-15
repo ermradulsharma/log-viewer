@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Ermradulsharma\LogViewer\Contracts\Utilities;
+namespace Skywalker\LogViewer\Contracts\Utilities;
 
-use Ermradulsharma\LogViewer\Entities\Log;
+use Skywalker\LogViewer\Entities\Log;
 use Illuminate\Contracts\Config\Repository as ConfigContract;
 
 /**
@@ -31,7 +31,7 @@ interface LogMenu
     /**
      * Set the log styler instance.
      *
-     * @param  \Ermradulsharma\LogViewer\Contracts\Utilities\LogStyler  $styler
+     * @param  \Skywalker\LogViewer\Contracts\Utilities\LogStyler  $styler
      *
      * @return self
      */
@@ -45,7 +45,7 @@ interface LogMenu
     /**
      * Make log menu.
      *
-     * @param  \Ermradulsharma\LogViewer\Entities\Log  $log
+     * @param  \Skywalker\LogViewer\Entities\Log  $log
      * @param  bool                               $trans
      *
      * @return array

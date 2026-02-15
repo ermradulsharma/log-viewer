@@ -1,12 +1,12 @@
 <?php
 
-namespace Ermradulsharma\LogViewer\Http\Controllers;
+namespace Skywalker\LogViewer\Http\Controllers;
 
-use Ermradulsharma\LogViewer\Contracts\LogViewer as LogViewerContract;
-use Ermradulsharma\LogViewer\Entities\{LogEntry, LogEntryCollection};
-use Ermradulsharma\LogViewer\LogViewer;
-use Ermradulsharma\LogViewer\Exceptions\LogNotFoundException;
-use Ermradulsharma\LogViewer\Tables\StatsTable;
+use Skywalker\LogViewer\Contracts\LogViewer as LogViewerContract;
+use Skywalker\LogViewer\Entities\{LogEntry, LogEntryCollection};
+use Skywalker\LogViewer\LogViewer;
+use Skywalker\LogViewer\Exceptions\LogNotFoundException;
+use Skywalker\LogViewer\Tables\StatsTable;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Routing\Controller;
@@ -29,7 +29,7 @@ class LogViewerController extends Controller
     /**
      * The log viewer instance
      *
-     * @var \Ermradulsharma\LogViewer\Contracts\LogViewer
+     * @var \Skywalker\LogViewer\Contracts\LogViewer
      */
     protected LogViewerContract $logViewer;
 
@@ -47,7 +47,7 @@ class LogViewerController extends Controller
     /**
      * LogViewerController constructor.
      *
-     * @param  \Ermradulsharma\LogViewer\Contracts\LogViewer  $logViewer
+     * @param  \Skywalker\LogViewer\Contracts\LogViewer  $logViewer
      */
     public function __construct(LogViewerContract $logViewer)
     {

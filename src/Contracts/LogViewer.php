@@ -2,7 +2,7 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Contracts;
+namespace Skywalker\LogViewer\Contracts;
 
 /**
  * Interface  LogViewer
@@ -51,7 +51,7 @@ interface LogViewer extends Patternable
     /**
      * Get all logs.
      *
-     * @return \Ermradulsharma\LogViewer\Entities\LogCollection|\Ermradulsharma\LogViewer\Entities\Log[]
+     * @return \Skywalker\LogViewer\Entities\LogCollection|\Skywalker\LogViewer\Entities\Log[]
      */
     public function all();
 
@@ -69,7 +69,7 @@ interface LogViewer extends Patternable
      *
      * @param  string  $date
      *
-     * @return \Ermradulsharma\LogViewer\Entities\Log
+     * @return \Skywalker\LogViewer\Entities\Log
      */
     public function get($date);
 
@@ -79,7 +79,7 @@ interface LogViewer extends Patternable
      * @param  string  $date
      * @param  string  $level
      *
-     * @return \Ermradulsharma\LogViewer\Entities\LogEntryCollection
+     * @return \Skywalker\LogViewer\Entities\LogEntryCollection
      */
     public function entries($date, $level = 'all');
 
@@ -106,7 +106,7 @@ interface LogViewer extends Patternable
      *
      * @param  string|null  $locale
      *
-     * @return \Ermradulsharma\LogViewer\Tables\StatsTable
+     * @return \Skywalker\LogViewer\Tables\StatsTable
      */
     public function statsTable($locale = null);
 
@@ -117,7 +117,7 @@ interface LogViewer extends Patternable
      *
      * @return bool
      *
-     * @throws \Ermradulsharma\LogViewer\Exceptions\FilesystemException
+     * @throws \Skywalker\LogViewer\Exceptions\FilesystemException
      */
     public function delete($date);
 

@@ -2,9 +2,9 @@
 
 
 
-namespace Ermradulsharma\LogViewer\Contracts;
+namespace Skywalker\LogViewer\Contracts;
 
-use Ermradulsharma\LogViewer\Contracts\Utilities\Filesystem;
+use Skywalker\LogViewer\Contracts\Utilities\Filesystem;
 
 /**
  * Interface  Patternable
